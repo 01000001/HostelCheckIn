@@ -19,9 +19,11 @@ check bed's availability, record guests' details, assign guests to beds, modify 
 List of features of the App
 -
 <ul><i>
+<li>user must log in before she/he can utilize the features of the application</li>
 <li>enables the user to browse the rooms and beds</li>
 <li>enables the user to register guests, with their names, number of nights</li>
-<li>enables the user to assign (check in) guests to beds</li>
+<li>enables the user to assign (check in) guests to beds (attributes as name, locker, deposit, price must be filled)</li>
+<li>enables the user to modify guests' attributes (name, locker, deposit, price must be filled)</li>
 <li>enables the user to search for guests by their name</li>
 <li>the application should display users staying more than one night on the following days' rosters as well</li>
 </ul>
