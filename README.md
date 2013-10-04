@@ -7,14 +7,14 @@ The idea
 -
 Lately I have started to work in a youth hostel and I've realized that they are still checking in guests with
 the oldschool paper/pen method.
-This approach is very toilsome for the receptionsts, there is no elegant way to mend mistakes on paper and receptionsts 
+This approach is very toilsome for the receptionists, there is no elegant way to mend mistakes on paper and receptionists 
 relying on each others calligraphy to process information correctly. Not to mention that in the end of the day all of
-those guests staying more than one night must be copied to the next day's check in list. This is just a waste of employees
-time, provides surfice for additional errors and since there is a lot of paper involved in the paperwork,
-it's harmful to the environment.
+those guests staying more than one night must be copied to the next day's check in list. 
+This is just a waste of employeestime, provides surface for additional errors and since there is a 
+lot of paper involved in the paperwork, it's harmful to the environment.
 
 The app has to implement all the features that a receptionist might require during checking in a guest, such as:
-log in users, allow users to browse rooms, record guests' details, assign guests to beds, modify details of guests
+allow the users to browse rooms, record guests' details, assign guests to beds, modify details of guests.
 
 List of features of the App
 -
