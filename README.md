@@ -56,5 +56,3 @@ Mockups
 <img src="/doc/Total_Rooms_2.png" alt="Browse Guests">
 <p><i>Total Rooms:</p>
 <img src="/doc/Total_Rooms_3.png" alt="Browse Guests">
-
-Browse Rooms is linked to Browse Guests and vica versa.
