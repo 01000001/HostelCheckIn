@@ -1,0 +1,14 @@
+
+<% total_price = 0 %>
+
+<% @beds.each do |bed| %>
+	<% if bed.room == room_variable_total %>
+		
+		<% if defined? bed.guests[0].name == "method" and
+		bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == Time.now.strftime("%Y %B %d, %A") %>
+        <% total_price += + bed.guests[0].price %>
+    <% end %>
+	<% end %>
+<% end %>
+
+<%= total_price %>

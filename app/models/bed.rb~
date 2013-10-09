@@ -1,0 +1,6 @@
+class Bed < ActiveRecord::Base
+	has_many :bookings
+  has_many :guests, through: :bookings
+  
+  ROOMS = ['hot', 'medium', 'cold']
+end

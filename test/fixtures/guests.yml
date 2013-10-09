@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  locker: 1
+  nights: 1
+  price: 1
+  deposit: 1
+
+two:
+  name: MyString
+  locker: 1
+  nights: 1
+  price: 1
+  deposit: 1

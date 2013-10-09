@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Locker</th>
+      <th>Nights</th>
+      <th>Price</th>
+      <th>Deposit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beds.each do |bed| %>
+      <tr>
+      		<% if bed.room == room_variable %>
+        <td><%= bed.room %></td>
+        <td><%= bed.number %></td>
+        
+        <!--Check if there are any guests are assigned to the beds
+        /if there are not, bed.guests[0].name would be undefined-->
+        <% if defined? bed.guests[0].name == "method" and
+        bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == Time.now.strftime("%Y %B %d, %A") %>
+        <td><%= bed.guests[0].name %></td>
+        <td><%= bed.guests[0].locker %></td>
+        <td><%= bed.guests[0].nights %></td>
+        <td><%= bed.guests[0].price %></td>
+        <td><%= bed.guests[0].deposit %></td>
+        <% else %>
+        <td>Room is free</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <% end %>
+  
+        <td><%= link_to 'Show', bed %></td>
+        <td><%= link_to 'EditGuest', edit_guest_path(bed.guests[0]) %></td>
+        <td><%= link_to 'Edit', edit_bed_path(bed) %></td>
+        <!-- Don't destroy beds!
+        <td><%= link_to 'Destroy', bed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<br>
+
+<!--Get the names of the rooms in the array room_names-->
+
+<% room_names = [] unless room_names %>
+<% @beds.each do |bed| %>
+	<% if room_names.include? bed.room %>
+	<% else %>
+	<% room_names << bed.room %>
+	<% end %>
+<% end %>
+
+<!--Initialize total_rooms_revenue to zero. -->
+<% @total_rooms_revenue = 0 %>
+
+<!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
+to store the total revenue for the rooms individually.-->
+<% room_names.each do |name| %>
+	
+	<% @i = "room_total_" + name %>
+	
+	<!--Render the count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
+	Bed table and sum upp all the revenue in the particular rooms.-->
+	Total Rooms <%= name %>: <%= @i = render partial: "count_Total", locals: {room_variable_total: name} %> Euro <br>
+	
+	<!--Sum up the particular revenues in @total_rooms_revenue variable-->
+	<% @total_rooms_revenue += @i.to_i%>
+	
+<% end %>
+
+Total Rooms: <%= @total_rooms_revenue %> Euro

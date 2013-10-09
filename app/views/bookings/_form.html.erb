@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :check_in_date %><br>
+    <%= f.datetime_select :check_in_date %>
+  </div>
+  <div class="field">
+    <%= f.label :check_out_date %><br>
+    <%= f.text_field :check_out_date, value: Date.today.strftime('%d-%m-%Y'), class: "datepicker" %>
+  </div>
+  <div class="field">
+    <%= f.label :guest_id %><br>
+    <%= f.collection_select(:guest_id, Guest.all, :id, :name, :prompt => "Select a Person") %>
+  </div>
+  
+  <!--Original bed_id field
+  <div class="field">
+    <%= f.label :bed_id %><br>
+    <%= f.text_field :bed_id %>
+  </div>
+  -->
+  
+  <div class="field">
+    <%= f.label :bed_id %><br>
+    <%= f.collection_select(:bed_id, Bed.all, :id, :number, :prompt => "Select a Room") %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<input type="text" data-behaviour='datepicker' >
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker();
+    $('.datepicker').datepicker();
+  })
+</script>

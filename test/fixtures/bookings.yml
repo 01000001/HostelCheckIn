@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  check_in_date: 2013-10-07 11:54:40
+  check_out_date: 2013-10-07 11:54:40
+  guest_id: 
+  bed_id: 
+
+two:
+  check_in_date: 2013-10-07 11:54:40
+  check_out_date: 2013-10-07 11:54:40
+  guest_id: 
+  bed_id: 

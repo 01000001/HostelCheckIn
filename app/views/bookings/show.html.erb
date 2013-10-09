@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Check in date:</strong>
+  <%= @booking.check_in_date %>
+</p>
+
+<p>
+  <strong>Check out date:</strong>
+  <%= @booking.check_out_date %>
+</p>
+
+<p>
+  <strong>Guest:</strong>
+  <%= @booking.guest.name %>
+</p>
+
+<p>
+  <strong>Bed:</strong>
+  <%= @booking.bed.number %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
