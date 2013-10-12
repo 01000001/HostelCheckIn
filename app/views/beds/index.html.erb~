@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<% Time.now.strftime("%Y %B %d, %A") %>
-
 
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#room_A">Room A</a></li>
@@ -17,25 +15,55 @@
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="room_A"><%= render partial: "room", locals: {room_variable: "A"} %></div>
-  <div class="tab-pane" id="room_B"><%= render partial: "room", locals: {room_variable: "B"} %></div>
-  <div class="tab-pane" id="room_C"><%= render partial: "room", locals: {room_variable: "C"} %></div>
-  <div class="tab-pane" id="room_DE"><%= render partial: "room", locals: {room_variable: "D"} %> <br>
-  																		<%= render partial: "room", locals: {room_variable: "E"} %></div>
-  <div class="tab-pane" id="room_F"><%= render partial: "room", locals: {room_variable: "F"} %></div>
-  <div class="tab-pane" id="room_G"><%= render partial: "room", locals: {room_variable: "G"} %></div>
-  <div class="tab-pane" id="room_H"><%= render partial: "room", locals: {room_variable: "H"} %></div>
-  <div class="tab-pane" id="room_L1L2"><%= render partial: "room", locals: {room_variable: "L1"} %> <br>
-  																	<%= render partial: "room", locals: {room_variable: "L2"} %></div>
-  	<div class="tab-pane" id="room_M1M2"><%= render partial: "room", locals: {room_variable: "M1"} %> <br>
-  																	<%= render partial: "room", locals: {room_variable: "M2"} %></div>
-  	<div class="tab-pane" id="room_R1R2"><%= render partial: "room", locals: {room_variable: "R1"} %> <br>
-  																	<%= render partial: "room", locals: {room_variable: "R2"} %></div>
-	<div class="tab-pane" id="room_Apartments"><%= render partial: "room", locals: {room_variable: "Green_Room"} %> <br>
-  																	<%= render partial: "room", locals: {room_variable: "Black_Room"} %></div>									
+	
+	<!-- Render the _room page sending the rooms' name as room_variable and the date by as time_variable,
+	the rendered page will iterate through the Bed table and display all the guests that are checked in the particular rooms -->
+	
+  <div class="tab-pane active" id="room_A"><%= render partial: "room", locals: {room_variable: "A",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_B"><%= render partial: "room", locals: {room_variable: "B",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_C"><%= render partial: "room", locals: {room_variable: "C",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_DE"><%= render partial: "room", locals: {room_variable: "D",
+  time_variable: @time_variable} %> <br>
+  																		<%= render partial: "room", locals: {room_variable: "E",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_F"><%= render partial: "room", locals: {room_variable: "F",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_G"><%= render partial: "room", locals: {room_variable: "G",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_H"><%= render partial: "room", locals: {room_variable: "H",
+  time_variable: @time_variable} %></div>
+  
+  <div class="tab-pane" id="room_L1L2"><%= render partial: "room", locals: {room_variable: "L1",
+  time_variable: @time_variable} %> <br>
+  																	<%= render partial: "room", locals: {room_variable: "L2",
+  time_variable: @time_variable} %></div>
+  
+  	<div class="tab-pane" id="room_M1M2"><%= render partial: "room", locals: {room_variable: "M1",
+  time_variable: @time_variable} %> <br>
+  																	<%= render partial: "room", locals: {room_variable: "M2",
+  time_variable: @time_variable} %></div>
+  
+  	<div class="tab-pane" id="room_R1R2"><%= render partial: "room", locals: {room_variable: "R1",
+  time_variable: @time_variable} %> <br>
+  																	<%= render partial: "room", locals: {room_variable: "R2",
+  time_variable: @time_variable} %></div>
+	
+	<div class="tab-pane" id="room_Apartments"><%= render partial: "room", locals: {room_variable: "Green",
+  time_variable: @time_variable} %> <br>
+  																	<%= render partial: "room", locals: {room_variable: "Black",
+  time_variable: @time_variable} %></div>									
 </div>
 
-<!--Testing, to be deleted!-->
+<!Testing, to be deleted!-->
 <% @geza = Guest.first %>
 <% if defined? @geza.guests[0].name == "method"%>
 <%= @geza.beds[0].room %>

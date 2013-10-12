@@ -4,7 +4,9 @@
 	<% if bed.room == room_variable_total %>
 		
 		<% if defined? bed.guests[0].name == "method" and
-		bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == Time.now.strftime("%Y %B %d, %A") %>
+		bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable and
+		bed.bookings[0].check_in_date.strftime("%H").to_i > shift_variable_after and
+		bed.bookings[0].check_in_date.strftime("%H").to_i < shift_variable_before %>
         <% total_price += + bed.guests[0].price %>
     <% end %>
 	<% end %>

@@ -19,11 +19,31 @@
   </div>
   <div class="field">
     <%= f.label :check_out_date %><br>
-    <%= f.text_field :check_out_date, value: Date.today.strftime('%d-%m-%Y'), class: "datepicker" %>
+    
+    <!--The following if statement checks if the user is redirected from the create_user page, in this case, the default value of the
+    check_out_date is going to be the date today + the number of days the guest is going to stay-->
+    <% if defined? notice.id == "method" %>
+    		<% selected_guest = Guest.find_by_id(notice.id) %>
+    		<%= f.datetime_select :check_out_date, default: selected_guest.nights.days.from_now %>
+    	<% else %>
+    		<%= f.datetime_select :check_out_date, default: 1.days.from_now %>
+    <% end %>
+    <!-- f.date_select :check_out_date, :order => [:day, :month, :year] -->
+    <!-- f.text_field :check_out_date, value: Date.today.strftime('%d-%m-%Y'), class: "datepicker" -->
   </div>
   <div class="field">
     <%= f.label :guest_id %><br>
-    <%= f.collection_select(:guest_id, Guest.all, :id, :name, :prompt => "Select a Person") %>
+    
+    <!--The following if statement checks if the user is redirected from the create_user page, in this case, the default value of thea
+    guest field is going to be the just before created guest's name-->
+    <% if defined? notice.id == "method" %>
+		  <% selected_guest = Guest.find_by_id(notice.id) %>
+		  <%= selected_guest.name %><br>
+		  <%= f.hidden_field :guest_id, :value => selected_guest.id, :readonly => true %>
+    <!-- f.collection_select(:guest_id, Guest.all, :id, :name, :selected => Guest.all.map(&:id)) -->
+    <% else %>
+    		<%= f.collection_select(:guest_id, Guest.all, :id, :name) %>
+    <% end %>
   </div>
   
   <!--Original bed_id field
@@ -35,7 +55,16 @@
   
   <div class="field">
     <%= f.label :bed_id %><br>
-    <%= f.collection_select(:bed_id, Bed.all, :id, :number, :prompt => "Select a Room") %>
+    
+    <!--Find all beds that hasn't booked yet-->
+    
+    <!Date has to be added here>
+    <% @beds_checked_out = Booking.where('check_out_date > ? AND id < ?', Date.today, 11)%>
+    <%= @beds_checked_out.first %>
+    <%= @beds %>
+    <% @beds_not_occupied = Bed.includes(:bookings).where(bookings: {bed_id: nil}) %>
+
+    <%= f.collection_select(:bed_id, @beds_not_occupied, :id, :number, :prompt => "Select a Bed") %>
   </div>
   
   <div class="actions">
@@ -45,6 +74,7 @@
 <% end %>
 
 <input type="text" data-behaviour='datepicker' >
+
 
 <script type="text/javascript">
   $(document).ready(function(){

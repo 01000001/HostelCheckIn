@@ -1,6 +1,7 @@
 <h1>Listing bookings</h1>
 
-<table>
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Check in date</th>
@@ -17,8 +18,8 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.check_in_date %></td>
-        <td><%= booking.check_out_date %></td>
+        <td><%= booking.check_in_date.strftime("%Y %B %d, %H:%M") %></td>
+        <td><%= booking.check_out_date.strftime("%Y %B %d, %H:%M") %></td>
         <td><%= booking.guest.name %></td>
         <td><%= booking.bed.room %></td>
         <td><%= booking.bed.number %></td>
@@ -29,45 +30,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Booking', new_booking_path, 'data-no-turbolink' => true %>
-
-<!-- Table for displaying available beds for guests -->
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Locker</th>
-      <th>Nights</th>
-      <th>Price</th>
-      <th>Deposit</th>
-      <th>Bed</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bookings.each do |booking| %>
-      <tr>
-      		<% if booking.bed.room == "A" %>
-      		<td><%= booking.bed.number %></td>
-      		<td><%= booking.guest.name %></td>
-        <td><%= booking.guest.locker %></td>
-        <td><%= booking.guest.nights %></td>
-        <td><%= booking.guest.price %></td>
-        <td><%= booking.guest.deposit %></td>
-        <td><%= booking.check_out_date %></td>
-        <td><%= link_to 'Show', booking %></td>
-        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<!-- - -->
+<%= link_to 'New Booking', new_booking_path %>

@@ -4,12 +4,12 @@
 
 <p>
   <strong>Check in date:</strong>
-  <%= @booking.check_in_date %>
+  <%= @booking.check_in_date.strftime("%Y %B %d, %A") %>
 </p>
 
 <p>
   <strong>Check out date:</strong>
-  <%= @booking.check_out_date %>
+  <%= @booking.check_out_date.strftime("%Y %B %d, %A") %>
 </p>
 
 <p>

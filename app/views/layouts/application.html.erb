@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<nav class="" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -25,8 +25,12 @@
           <li><%= link_to 'Guests', guests_url %></li>
           <li><%= link_to 'Bookings', bookings_url %></li>
           <li><%= link_to "Total", total_url %></li>
+          
         </ul>
-        <div style="float: right;"><%= Time.now.strftime("%Y %B %d, %A") %></div>
+        <div style="float: right;" class="show_time">
+        <% @time_variable = session[:date_variable].strftime("%Y %B %d, %A") %>
+        <%= @time_variable %>
+        </div>
       </div>
     </div>
   </div>
@@ -34,7 +38,8 @@
 </nav>
 <br>
 <br>
+<div class="main_division">
 <%= yield %>
-
+</div>
 </body>
 </html>

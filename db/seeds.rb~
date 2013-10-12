@@ -182,7 +182,7 @@ Bed.delete_all
 	$beds_in_Green = 1
 
 	while $i <= $beds_in_Green  do
-		Bed.create(:room => "Green_Room",
+		Bed.create(:room => "Green",
 		:number => $i,
 		)
 		$i +=1
@@ -194,7 +194,7 @@ Bed.delete_all
 	$beds_in_Black = 1
 
 	while $i <= $beds_in_Black  do
-		Bed.create(:room => "Black_Room",
+		Bed.create(:room => "Black",
 		:number => $i,
 		)
 		$i +=1
@@ -207,7 +207,7 @@ require 'random_data'
 Guest.delete_all
 
 	$i = 1
-	$gests_ammount = 50
+	$gests_ammount = 10000
 	while $i <= $gests_ammount do
 		name = Random.firstname + " " + Random.lastname
 		Guest.create(:name => name,

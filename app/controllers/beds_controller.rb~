@@ -6,6 +6,10 @@ class BedsController < ApplicationController
   def index
     @beds = Bed.all
   end
+  
+  def total
+    @beds = Bed.all
+  end
 
   # GET /beds/1
   # GET /beds/1.json
@@ -60,6 +64,18 @@ class BedsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def yesterday
+  
+  			@beds = Bed.all
+  			
+		  session[:date_variable] = Date.today
+		  @time_variable = session[:date_variable].strftime("%Y %B %d, %A")
+		  
+		  respond_to do |format|
+		  		format.html { redirect_to guests_url }
+		  end
+  	end
 
   private
     # Use callbacks to share common setup or constraints between actions.

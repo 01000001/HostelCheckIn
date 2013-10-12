@@ -28,7 +28,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: 'Guest was successfully created.' }
+        format.html { redirect_to new_booking_path, notice: @guest}
         format.json { render action: 'show', status: :created, location: @guest }
       else
         format.html { render action: 'new' }

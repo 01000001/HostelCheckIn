@@ -207,7 +207,7 @@ require 'random_data'
 Guest.delete_all
 
 	$i = 1
-	$gests_ammount = 50
+	$gests_ammount = 300
 	while $i <= $gests_ammount do
 		name = Random.firstname + " " + Random.lastname
 		Guest.create(:name => name,

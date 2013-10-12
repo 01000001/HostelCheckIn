@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<br>
 
 <!--Get the names of the rooms in the array room_names-->
 
@@ -10,6 +11,46 @@
 	<% end %>
 <% end %>
 
+<!AM Shift>
+
+AM Shift 8 - 16 H <br>
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+	<tr>
+	<!--Initialize total_rooms_revenue to zero. -->
+	<% @total_rooms_revenue = 0 %>
+
+	<!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
+	to store the total revenue for the rooms individually.-->
+	<% room_names.each do |name| %>
+	
+		<% @i = "room_total_" + name %>
+	
+		<!--Render the _count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
+		Bed table and sum upp all the revenue in the particular rooms.-->
+		<th>Total Rooms <%= name %>: </th>
+		
+		</tr>
+  </thead>
+
+  <tbody>
+  <tr>
+        <td>
+		<%= @i = render partial: "count_Total", locals: {room_variable_total: name, time_variable: @time_variable,
+		shift_variable_after: 7, shift_variable_before: 16} %> Euro </td>
+	
+		<!--Sum up the particular revenues in @total_rooms_revenue variable-->
+		<% @total_rooms_revenue += @i.to_i%>
+	</tr>
+	<% end %>
+	</tbody>
+	</table>
+	Total Rooms: <%= @total_rooms_revenue %> Euro
+
+<!PM Shift>
+
+<br><br>PM Shift 16 - 24 <br>
 <!--Initialize total_rooms_revenue to zero. -->
 <% @total_rooms_revenue = 0 %>
 
@@ -19,9 +60,58 @@ to store the total revenue for the rooms individually.-->
 	
 	<% @i = "room_total_" + name %>
 	
-	<!--Render the count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
+	<!--Render the _count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
 	Bed table and sum upp all the revenue in the particular rooms.-->
-	Total Rooms <%= name %>: <%= @i = render partial: "count_Total", locals: {room_variable_total: name} %> Euro <br>
+	Total Rooms <%= name %>: <%= @i = render partial: "count_Total", locals: {room_variable_total: name, time_variable: @time_variable,
+	shift_variable_after: 15, shift_variable_before: 24} %> Euro <br>
+	
+	<!--Sum up the particular revenues in @total_rooms_revenue variable-->
+	<% @total_rooms_revenue += @i.to_i%>
+	
+<% end %>
+
+Total Rooms: <%= @total_rooms_revenue %> Euro
+
+<!Night Shift>
+
+<br><br>Night Shift 0 - 8 <br>
+<!--Initialize total_rooms_revenue to zero. -->
+<% @total_rooms_revenue = 0 %>
+
+<!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
+to store the total revenue for the rooms individually.-->
+<% room_names.each do |name| %>
+	
+	<% @i = "room_total_" + name %>
+	
+	<!--Render the _count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
+	Bed table and sum upp all the revenue in the particular rooms.-->
+	Total Rooms <%= name %>: <%= @i = render partial: "count_Total", locals: {room_variable_total: name, time_variable: @time_variable,
+	shift_variable_after: -1, shift_variable_before: 8} %> Euro <br>
+	
+	<!--Sum up the particular revenues in @total_rooms_revenue variable-->
+	<% @total_rooms_revenue += @i.to_i%>
+	
+<% end %>
+
+Total Rooms: <%= @total_rooms_revenue %> Euro
+
+<!Day Total>
+
+<br><br>Day total <br>
+<!--Initialize total_rooms_revenue to zero. -->
+<% @total_rooms_revenue = 0 %>
+
+<!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
+to store the total revenue for the rooms individually.-->
+<% room_names.each do |name| %>
+	
+	<% @i = "room_total_" + name %>
+	
+	<!--Render the _count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
+	Bed table and sum upp all the revenue in the particular rooms.-->
+	Total Rooms <%= name %>: <%= @i = render partial: "count_Total", locals: {room_variable_total: name, time_variable: @time_variable,
+	shift_variable_after: -1, shift_variable_before: 24} %> Euro <br>
 	
 	<!--Sum up the particular revenues in @total_rooms_revenue variable-->
 	<% @total_rooms_revenue += @i.to_i%>

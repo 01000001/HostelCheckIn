@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<table>
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Room</th>
@@ -18,20 +19,37 @@
   </thead>
 
   <tbody>
-    <% @beds.each do |bed| %>
+    <% @beds.where(room: room_variable).each do |bed| %>
       <tr>
-      		<% if bed.room == room_variable %>
         <td><%= bed.room %></td>
         <td><%= bed.number %></td>
         
         <!--Check if there are any guests are assigned to the beds
-        /if there are not, bed.guests[0].name would be undefined-->
+        /if there are not, bed.guests[0].name would be undefined.
+        Check guests' booking and check out date, display only those guests that are staying in the hotel during
+        the given date.-->
+        <% if defined? bed.guests[0].name == "method"%>
+        Name: <%= bed.guests[0].name %> <br>
+        Check in: <%= bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") %><br>
+        Check out: <%= bed.bookings[0].check_out_date.strftime("%Y %B %d, %A") %><br>
+        Time: <%= time_variable %><br>
+        <% end %>
         <% if defined? bed.guests[0].name == "method" and
-        bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == Time.now.strftime("%Y %B %d, %A") %>
+        bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") <= time_variable and
+        bed.bookings[0].check_out_date.strftime("%Y %B %d, %A") >= time_variable
+         %>
         <td><%= bed.guests[0].name %></td>
         <td><%= bed.guests[0].locker %></td>
         <td><%= bed.guests[0].nights %></td>
-        <td><%= bed.guests[0].price %></td>
+        
+        <!--Check if guests are checked in in the given date, if yes, display the price they pay, if not,
+        leave the column empty.-->
+        <% if bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable %>
+		      <td><%= bed.guests[0].price %></td>
+		      <% else %>
+		      <td>-</td>
+        <% end %>
+        
         <td><%= bed.guests[0].deposit %></td>
         <% else %>
         <td>Room is free</td>
@@ -47,8 +65,8 @@
         <!-- Don't destroy beds!
         <td><%= link_to 'Destroy', bed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         -->
-        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

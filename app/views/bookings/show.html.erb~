@@ -14,12 +14,12 @@
 
 <p>
   <strong>Guest:</strong>
-  <%= @booking.guest %>
+  <%= @booking.guest.name %>
 </p>
 
 <p>
   <strong>Bed:</strong>
-  <%= @booking.bed %>
+  <%= @booking.bed.number %>
 </p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
