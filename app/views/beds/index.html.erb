@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<% if @time_variable.present? %>
+<% @time_variable %>
+<%= "its on" %>
+<% else %>
+<% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
+<%= "its not on" %>
+<% end %>
+
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#room_A">Room A</a></li>
   <li><a href="#room_B">Room B</a></li>

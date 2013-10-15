@@ -1,0 +1,6 @@
+class DateController < ApplicationController
+
+	def modify_date
+	end
+
+end

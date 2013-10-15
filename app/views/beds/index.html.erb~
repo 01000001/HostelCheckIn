@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 
+<% if @time_variable.present? %>
+<% @time_variable %>
+<%= "its on" %>
+<% else %>
+<% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
+<% end %>
+
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#room_A">Room A</a></li>
   <li><a href="#room_B">Room B</a></li>
@@ -63,7 +70,7 @@
   time_variable: @time_variable} %></div>									
 </div>
 
-<!Testing, to be deleted!-->
+<!Testing, to be deleted!>
 <% @geza = Guest.first %>
 <% if defined? @geza.guests[0].name == "method"%>
 <%= @geza.beds[0].room %>

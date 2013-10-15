@@ -3,13 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  before_filter :set_date
   
   private
 		
 		def set_date
-		  session[:date_variable] = Date.today
-		  @time_variable = session[:date_variable].strftime("%Y %B %d, %A")
+			if @time_variable.present?
+				@time_variable
+			
+			else
+				session[:date_variable] = Date.today
+				@time_variable = session[:date_variable].strftime("%Y %B %d, %A")
+			end
   		end
   
 	end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007095440) do
+ActiveRecord::Schema.define(version: 20131015102941) do
 
   create_table "beds", force: true do |t|
     t.string   "room"
@@ -32,12 +32,24 @@ ActiveRecord::Schema.define(version: 20131007095440) do
   add_index "bookings", ["bed_id"], name: "index_bookings_on_bed_id"
   add_index "bookings", ["guest_id"], name: "index_bookings_on_guest_id"
 
+  create_table "days", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "guests", force: true do |t|
     t.string   "name"
     t.integer  "locker"
     t.integer  "nights"
     t.integer  "price"
     t.integer  "deposit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

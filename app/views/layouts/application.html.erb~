@@ -28,9 +28,20 @@
           
         </ul>
         <div style="float: right;" class="show_time">
-        <%= button_to 'Yesterday', controller: "beds", action: "yesterday" %>
+        <%= link_to "<", :controller => "beds", :action => "decrease_date" %>
+        
+        <% @time_variable = Date.today.strftime("%Y %B %d, %A") %>
+        
+        <% if defined?(:alert) && !alert.nil? %>
+				<%= @time_variable = session[:date_variable] = alert.strftime("%Y %B %d, %A") %>
+				<% else %>
+        
         <% @time_variable = session[:date_variable].strftime("%Y %B %d, %A") %>
+				
         <%= @time_variable %>
+        <% end %>
+        
+        <%= link_to ">", :controller => "beds", :action => "increase_date" %>
         </div>
       </div>
     </div>
@@ -39,8 +50,20 @@
 </nav>
 <br>
 <br>
+
 <div class="main_division">
 <%= yield %>
 </div>
+
+<script>
+	var v="<%= @time_variable %>"
+	fun = function(){console.log('this is fun')};
+	d = function(){console.log(v)};
+	$(document).ready(function(){
+      fun();
+     	d();
+    });
+</script>
+
 </body>
 </html>

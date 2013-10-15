@@ -24,6 +24,16 @@ class BedsController < ApplicationController
   # GET /beds/1/edit
   def edit
   end
+  
+  def increase_date
+  		@time_variable = Date.today + 1
+  		redirect_to :back, :alert => @time_variable
+  end
+
+	def decrease_date
+  		@time_variable = Date.today - 1
+  		redirect_to :back, :alert => @time_variable
+  end
 
   # POST /beds
   # POST /beds.json
@@ -64,18 +74,6 @@ class BedsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  def yesterday
-  
-  			@beds = Bed.all
-  			
-		  session[:date_variable] = Date.today
-		  @time_variable = session[:date_variable].strftime("%Y %B %d, %A")
-		  
-		  respond_to do |format|
-		  		format.html { redirect_to guests_url }
-		  end
-  	end
 
   private
     # Use callbacks to share common setup or constraints between actions.
