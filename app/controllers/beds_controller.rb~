@@ -28,6 +28,7 @@ class BedsController < ApplicationController
   def increase_date
   		@time_variable = Date.today + 1
   		redirect_to :back, :alert => @time_variable
+  		#perhaps try render here
   end
 
 	def decrease_date

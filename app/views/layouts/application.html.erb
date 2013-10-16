@@ -28,20 +28,17 @@
           
         </ul>
         <div style="float: right;" class="show_time">
-        <%= link_to "<", :controller => "beds", :action => "decrease_date" %>
+        <%= link_to "<", :controller => "time", :action => "decrease", :alert => @date_variable %>
         
-        <% @time_variable = Date.today.strftime("%Y %B %d, %A") %>
-        
-        <% if defined?(:alert) && !alert.nil? %>
-				<%= @time_variable = alert.strftime("%Y %B %d, %A") %>
-				<% else %>
-        
-        <% @time_variable = session[:date_variable].strftime("%Y %B %d, %A") %>
+        <% if alert.present? %>
+				<%= alert.strftime("%Y %B %d, %A") %>
 				
-        <%= @time_variable %>
+				<% else %>
+				
+        <%= Date.today.strftime("%Y %B %d, %A") %>
         <% end %>
         
-        <%= link_to ">", :controller => "beds", :action => "increase_date" %>
+        <%= link_to ">", :controller => "time", :action => "increase", :alert => @date_variable %>
         </div>
       </div>
     </div>

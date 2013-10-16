@@ -24,17 +24,6 @@ class BedsController < ApplicationController
   # GET /beds/1/edit
   def edit
   end
-  
-  def increase_date
-  		@time_variable = Date.today + 1
-  		redirect_to :back, :alert => @time_variable
-  		#perhaps try render here
-  end
-
-	def decrease_date
-  		@time_variable = Date.today - 1
-  		redirect_to :back, :alert => @time_variable
-  end
 
   # POST /beds
   # POST /beds.json

@@ -1,4 +1,8 @@
 Bobs::Application.routes.draw do
+  get "time/set"
+  get "time/increase"
+  get "time/decrease"
+  
   resources :users
 
   resources :bookings
@@ -16,8 +20,6 @@ Bobs::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'total' => 'beds#total'
-  get 'increase_date' => 'beds#increase_date'
-  get 'decrease_date' => 'beds#decrease_date'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

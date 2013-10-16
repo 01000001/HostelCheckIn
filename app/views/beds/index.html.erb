@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<% if @time_variable.present? %>
-<% @time_variable %>
+<% if alert.present? %>
+<%= @time_variable = alert.strftime("%Y %B %d, %A")  %>
 <%= "its on" %>
 <% else %>
 <% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
-<%= "its not on" %>
 <% end %>
 
 <ul class="nav nav-tabs" id="myTab">

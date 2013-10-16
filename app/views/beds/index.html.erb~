@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<% if @time_variable.present? %>
-<% @time_variable %>
+<% if alert.present? %>
+<%= @time_variable = alert.strftime("%Y %B %d, %A")  %>
 <%= "its on" %>
+<%= @time_variable.to_date  %>
 <% else %>
 <% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
 <% end %>
