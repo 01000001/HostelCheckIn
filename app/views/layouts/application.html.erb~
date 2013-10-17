@@ -27,18 +27,25 @@
           <li><%= link_to "Total", total_url %></li>
           
         </ul>
-        <div style="float: right;" class="show_time">
+        <div style="float: right;" class="nav-collapse">
+        <div class="nav-collapse">
+        <ul class="nav">
+        <li>
         <%= link_to "<", :controller => "time", :action => "decrease", :alert => @date_variable %>
-        
+        </li>
+        <li>
         <% if alert.present? %>
-				<%= alert.strftime("%Y %B %d, %A") %>
+				<%= link_to alert.strftime("%Y %B %d, %A") %>
 				
 				<% else %>
 				
-        <%= Date.today.strftime("%Y %B %d, %A") %>
+        <%= link_to Date.today.strftime("%Y %B %d, %A") %>
         <% end %>
-        
-        <%= link_to ">", :controller => "time", :action => "increase", :alert => "baba" %>
+        </li>
+        <li>
+        <%= link_to ">", :controller => "time", :action => "increase", :alert => @date_variable %>
+        </li>
+        </ul>
         </div>
       </div>
     </div>

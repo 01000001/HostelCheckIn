@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015102941) do
+ActiveRecord::Schema.define(version: 20131017090740) do
 
   create_table "beds", force: true do |t|
     t.string   "room"
@@ -49,7 +49,8 @@ ActiveRecord::Schema.define(version: 20131015102941) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "hashed_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <br>
 
+<% if alert.present? %>
+<%= @time_variable = alert.strftime("%Y %B %d, %A") %><br>
+<%= "its on" %><br><br>
+<% else %>
+<% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
+<% end %>
+
 <!--Get the names of the rooms in the array room_names-->
 
 <% room_names = [] unless room_names %>

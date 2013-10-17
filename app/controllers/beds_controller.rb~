@@ -1,5 +1,7 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: [:show, :edit, :update, :destroy]
+  
+  before_filter :authorize
 
   # GET /beds
   # GET /beds.json
@@ -23,17 +25,6 @@ class BedsController < ApplicationController
 
   # GET /beds/1/edit
   def edit
-  end
-  
-  def increase_date
-  		@time_variable = Date.today + 1
-  		redirect_to :back, :alert => @time_variable
-  		#perhaps try render here
-  end
-
-	def decrease_date
-  		@time_variable = Date.today - 1
-  		redirect_to :back, :alert => @time_variable
   end
 
   # POST /beds

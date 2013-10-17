@@ -1,9 +1,17 @@
 Bobs::Application.routes.draw do
+
+	get 'admin' => 'admin#index'
+	
+	get 'login' => "sessions#new"
+	post 'login' => "sessions#create"
+	get 'logout' => "sessions#destroy"
+  
+	
+  resources :users
+
   get "time/set"
   get "time/increase"
   get "time/decrease"
-  
-  resources :users
 
   resources :bookings
 
