@@ -34,9 +34,8 @@
         <%= link_to "<", :controller => "time", :action => "decrease", :alert => @date_variable %>
         </li>
         <li>
-        <% if alert.present? %>
+        <% if alert.present? and alert.is_a? Date%>
 				<%= link_to alert.strftime("%Y %B %d, %A") %>
-				
 				<% else %>
 				
         <%= link_to Date.today.strftime("%Y %B %d, %A") %>

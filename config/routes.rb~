@@ -2,8 +2,8 @@ Bobs::Application.routes.draw do
 
 	get 'admin' => 'admin#index'
 	
-	get 'signup' => "sessions#new"
-	get 'login' => "sessions#create"
+	get 'login' => "sessions#new"
+	post 'login' => "sessions#signup"
 	get 'logout' => "sessions#destroy"
   
 	

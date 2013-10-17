@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
-<!very unelegant way to check if alert is the date submitted and not something else>
 <% if alert.present?%>
-<%= @time_variable = alert.strftime("%Y %B %d, %A") and alert.strftime("%Y %B %d, %A").start_with? "20"  %>
+<%= @time_variable = alert.strftime("%Y %B %d, %A")%>
 <%= "its on" %>
 <% else %>
 <% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
