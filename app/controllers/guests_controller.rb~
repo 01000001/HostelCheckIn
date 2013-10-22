@@ -1,15 +1,27 @@
 class GuestsController < ApplicationController
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
+	def search
+  		@guests = Guest.search params[:search]
+	end
+
   # GET /guests
   # GET /guests.json
   def index
     @guests = Guest.all
+    
   end
 
   # GET /guests/1
   # GET /guests/1.json
   def show
+  
+  if params[:search]
+			@search = Guest.search(params[:search]).order("created_at DESC")
+		else
+
+			@search = Guest.all.order('created_at DESC')
+		end
   end
 
   # GET /guests/new
@@ -28,7 +40,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to new_booking_path, notice: [@guest, "baba"]}
+        format.html { redirect_to new_booking_path, notice: @guest}
         format.json { render action: 'show', status: :created, location: @guest }
       else
         format.html { render action: 'new' }

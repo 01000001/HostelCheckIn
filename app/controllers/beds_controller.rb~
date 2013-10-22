@@ -1,7 +1,10 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: [:show, :edit, :update, :destroy]
-  
-  before_filter :authorize
+
+	def write_out
+  		@write_out = "write_out"
+  		
+  end
 
   # GET /beds
   # GET /beds.json

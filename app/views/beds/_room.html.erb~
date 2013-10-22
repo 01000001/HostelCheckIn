@@ -28,11 +28,7 @@
         /if there are not, bed.guests[0].name would be undefined.
         Check guests' booking and check out date, display only those guests that are staying in the hotel during
         the given date.-->
-        <% if defined? bed.guests[0].name == "method"%>
-        Check in: <%= bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") %>
-        Check out: <%= bed.bookings[0].check_out_date.strftime("%Y %B %d, %A") %>
-        Time: <%= time_variable %>
-        <% end %>
+        
         <% if defined? bed.guests[0].name == "method" and
         bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") <= time_variable and
         bed.bookings[0].check_out_date.strftime("%Y %B %d, %A") >= time_variable

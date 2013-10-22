@@ -17,6 +17,7 @@
     <%= f.label :check_in_date %><br>
     <%= f.datetime_select :check_in_date %>
   </div>
+  
   <div class="field">
     <%= f.label :check_out_date %><br>
     
@@ -57,13 +58,24 @@
     <%= f.label :bed_id %><br>
     
     <!--Find all beds that hasn't booked yet-->
+    
     <!Date has to be added here>
-    <% @beds_checked_out = Booking.where('check_out_date > ? AND id < ?', Date.today, 11)%>
-    <%= @beds_checked_out.first %>
+    
+    <!--Find all active bookings-->
+    <% beds_checked_out = Booking.where('check_out_date > ? AND id < ?', Date.today, 1000)%>
+    
+    
+    <%= beds_checked_out.where(id: 58) %>
+    
     <%= @beds %>
     <% @beds_not_occupied = Bed.includes(:bookings).where(bookings: {bed_id: nil}) %>
 
-    <%= f.collection_select(:bed_id, @beds_not_occupied, :id, :number, :prompt => "Select a Bed") %>
+    <%= f.collection_select(:bed_id, @beds_not_occupied, :id, :bed_label, :prompt => "Select a Bed") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :shift %><br>
+    <%= f.select(:shift, ["AM","PM","NIGHT"], :prompt => "Select") %>
   </div>
   
   <div class="actions">
@@ -76,8 +88,13 @@
 
 
 <script type="text/javascript">
+
   $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker();
+    $('[data-behaviour~=datepicker]').datepicker({ dateFormat: 'yy-mm-dd' });
     $('.datepicker').datepicker();
+    
+    $("#datepicker").datepicker({
+            dateFormat:'mm/dd/yy'
+        });
   })
 </script>

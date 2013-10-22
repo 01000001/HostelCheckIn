@@ -2,22 +2,23 @@ class TimeController < ApplicationController
   before_filter :set
   
   def set
-  		if alert.present?
-  		@date_variable = alert
+  		if session[:time_variable].present? 
+  			@time_variable = session[:time_variable]
   		else
-  		@time_variable = Date.today
+			@time_variable = Date.today
+			session[:time_variable] = Date.today
   		end
   end
 
   def increase
-  		@time_variable += 1
-  		redirect_to :back, :alert => @time_variable
+  		session[:time_variable] += 1
+  		redirect_to :back
   		#perhaps try render here
   end
 
   def decrease
-  		@time_variable -= 1
-  		redirect_to :back, :alert => @time_variable
+  		session[:time_variable] -= 1
+  		redirect_to :back
   end
   
 end

@@ -1,10 +1,15 @@
 class GuestsController < ApplicationController
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
+	def search
+  		@guests = Guest.search params[:search]
+	end
+
   # GET /guests
   # GET /guests.json
   def index
     @guests = Guest.all
+    
   end
 
   # GET /guests/1

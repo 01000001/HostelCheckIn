@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
  	
  	before_filter :authorize
-  skip_before_filter :authorize, :only => [:new, :create]
+	
   
   protected
 		def authorize

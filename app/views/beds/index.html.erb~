@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
-<!very unelegant way to check if alert is the date submitted and not something else>
-<% if alert.present?%>
-<%= @time_variable = alert.strftime("%Y %B %d, %A")%>
+<% if session[:time_variable].present? %>
+<%= @time_variable = session[:time_variable].strftime("%Y %B %d, %A")%>
 <%= "its on" %>
 <% else %>
 <% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
