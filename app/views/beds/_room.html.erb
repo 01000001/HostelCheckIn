@@ -17,7 +17,6 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @beds.where(room: room_variable).each do |bed| %>
       <tr>
@@ -30,12 +29,12 @@
         the given date.-->
         
         <% if defined? bed.guests[0].name == "method" and
-        bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") <= time_variable and
-        bed.bookings[0].check_out_date.strftime("%Y %B %d, %A") >= time_variable
+        bed.bookings[0].check_in_date.strftime("%Y%m%d") <= time_variable.to_time.strftime("%Y%m%d") and
+        bed.bookings[0].check_out_date.strftime("%Y%m%d") >= time_variable.to_time.strftime("%Y%m%d")
          %>
         <td><%= link_to bed.guests[0].name, edit_guest_path(bed.guests[0]) %></td>
         <td><%= bed.guests[0].locker %></td>
-        <td><%= bed.guests[0].nights %></td>
+        <td><%= bed.guests[0].nights %> </td>
         
         <!--Check if guests are checked in in the given date, if yes, display the price they pay, if not,
         leave the column empty.-->

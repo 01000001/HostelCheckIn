@@ -47,11 +47,11 @@
         <li>
         <!--Check if date is manipulated (session time_variable is present), if yes,
         display the manipulated date, if not, show today's' date -->
-         <% if session[:time_variable].present? %>
-				<%= link_to session[:time_variable].strftime("%Y %B %d, %A") %>
-				<% else %>
-        <%= link_to Date.today.strftime("%Y %B %d, %A") %>
-        <% end %>
+		       <% if session[:time_variable].present? %>
+					<%= link_to session[:time_variable].strftime("%Y %B %d, %A") %>
+					<% else %>
+		      <%= link_to Date.today.strftime("%Y %B %d, %A") %>
+		      <% end %>
         </li>
         <li>
         <%= link_to ">", :controller => "time", :action => "increase" %>

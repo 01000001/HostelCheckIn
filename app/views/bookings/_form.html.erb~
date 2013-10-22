@@ -15,7 +15,9 @@
 
   <div class="field">
     <%= f.label :check_in_date %><br>
-    <%= f.datetime_select :check_in_date %>
+    <%= f.text_field :check_in_date, :id => "myDateField", :value => 0.days.from_now.strftime("%d %m %Y"), :style => "text-align: Center"  %>
+    
+    
   </div>
   
   <div class="field">
@@ -25,9 +27,11 @@
     check_out_date is going to be the date today + the number of days the guest is going to stay-->
     <% if defined? notice.id == "method" %>
     		<% selected_guest = Guest.find_by_id(notice.id) %>
-    		<%= f.datetime_select :check_out_date, default: selected_guest.nights.days.from_now %>
+    		<%= f.text_field :check_out_date, :value => selected_guest.nights.days.from_now,
+    		 :class => 'datepicker', :size => 4, :style => "text-align: Center"  %>
     	<% else %>
-    		<%= f.datetime_select :check_out_date, default: 1.days.from_now %>
+    		<%= f.text_field :check_out_date, :value => 1.days.from_now, :class => 'datepicker', :style => "text-align: Center"  %>
+    		
     <% end %>
     <!-- f.date_select :check_out_date, :order => [:day, :month, :year] -->
     <!-- f.text_field :check_out_date, value: Date.today.strftime('%d-%m-%Y'), class: "datepicker" -->
@@ -65,7 +69,7 @@
     <% beds_checked_out = Booking.where('check_out_date > ? AND id < ?', Date.today, 1000)%>
     
     
-    <%= beds_checked_out.where(id: 58) %>
+    <%= beds_checked_out %>
     
     <%= @beds %>
     <% @beds_not_occupied = Bed.includes(:bookings).where(bookings: {bed_id: nil}) %>
@@ -89,12 +93,11 @@
 
 <script type="text/javascript">
 
+  $.datepicker.setDefaults( settings )
+  
   $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker({ dateFormat: 'yy-mm-dd' });
+    $('[data-behaviour~=datepicker]').datepicker();
     $('.datepicker').datepicker();
-    
-    $("#datepicker").datepicker({
-            dateFormat:'mm/dd/yy'
-        });
+    $('#myDateField').datepicker("option", "altFormat", "yy-mm-dd");
   })
 </script>
