@@ -18,6 +18,14 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :passport_number %><br>
+    <%= f.text_field :passport_number %>
+  </div>
+  <div class="field">
     <%= f.label :locker %><br>
     <%= f.number_field :locker %>
   </div>
@@ -32,6 +40,10 @@
   <div class="field">
     <%= f.label :deposit %><br>
     <%= f.number_field :deposit %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_field :note %>
   </div>
   <div class="actions">
     <%= f.submit %>

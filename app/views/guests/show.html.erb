@@ -8,6 +8,16 @@
 </p>
 
 <p>
+  <strong>Nationality:</strong>
+  <%= @guest.nationality %>
+</p>
+
+<p>
+  <strong>Paspport number:</strong>
+  <%= @guest.passport_number %>
+</p>
+
+<p>
   <strong>Locker:</strong>
   <%= @guest.locker %>
 </p>
@@ -25,6 +35,11 @@
 <p>
   <strong>Deposit:</strong>
   <%= @guest.deposit %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @guest.note %>
 </p>
 
 <%= link_to 'Edit', edit_guest_path(@guest) %> |

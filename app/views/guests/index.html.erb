@@ -11,6 +11,7 @@
       <th>Nights</th>
       <th>Price</th>
       <th>Deposit</th>
+      <th>Notes</th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,6 +26,7 @@
         <td><%= guest.nights %></td>
         <td><%= guest.price %></td>
         <td><%= guest.deposit %></td>
+        <td><%= guest.note %></td>
         <td><%= link_to 'Show', guest %></td>
         <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
         <td><%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>

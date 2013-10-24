@@ -1,13 +1,5 @@
 <!DOCTYPE HTML>
 
-<br>
-<br>
-br
-
-<%if defined?(@time_variable)%>
-<%= @time_variable%>
-<% end %>
-
 <p id="notice"><%= notice %></p>
 
 <p>

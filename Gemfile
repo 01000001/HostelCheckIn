@@ -43,6 +43,8 @@ gem "less-rails"
 gem 'bootstrap-datepicker-rails'
 
 gem 'random_data'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
