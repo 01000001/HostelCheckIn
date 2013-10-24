@@ -34,7 +34,21 @@
          %>
         <td><%= link_to bed.guests[0].name, edit_guest_path(bed.guests[0]) %></td>
         <td><%= bed.guests[0].locker %></td>
-        <td><%= bed.guests[0].nights %> </td>
+        <td>
+        <% if session[:time_variable].present? %>
+        		<% difference = (session[:time_variable].to_date - bed.bookings[0].check_in_date.to_date).to_i %>
+        		<% nights_left = bed.guests[0].nights-difference %>
+        		<% if nights_left == 0 %>
+        			<%= "Guest will check out today" %>
+        		<% else %>
+        			<%= nights_left %>
+        		<% end %>
+        		
+        <% else %>
+        		<% difference = (Date.today.to_date - bed.bookings[0].check_in_date.to_date).to_i %>
+        		<%= bed.guests[0].nights-difference %>
+        <% end %>
+        </td>
         
         <!--Check if guests are checked in in the given date, if yes, display the price they pay, if not,
         leave the column empty.-->

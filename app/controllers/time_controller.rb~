@@ -9,16 +9,20 @@ class TimeController < ApplicationController
 			session[:time_variable] = Date.today
   		end
   end
-
+	
+	def set_today
+		session[:time_variable] = Date.today
+	end
+	
   def increase
   		session[:time_variable] += 1
-  		redirect_to :back, :alert => @time_variable
+  		redirect_to :back
   		#perhaps try render here
   end
 
   def decrease
   		session[:time_variable] -= 1
-  		redirect_to :back, :alert => @time_variable
+  		redirect_to :back
   end
   
 end

@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :check_in_date %><br>
-    <%= f.text_field :check_in_date, :id => "myDateField", :value => 0.days.from_now.strftime("%d %m %Y"), :style => "text-align: Center"  %>
+    <%= f.text_field :check_in_date, :id => "myDateField", :value => 0.days.from_now, :style => "text-align: Center"  %>
     
     
   </div>
@@ -61,20 +61,45 @@
   <div class="field">
     <%= f.label :bed_id %><br>
     
-    <!--Find all beds that hasn't booked yet-->
+    <!--Find all the beds that are not occupied at the moment
+    That is all the beds that does not have booking for 
+    -->
     
     <!Date has to be added here>
     
     <!--Find all active bookings-->
-    <% beds_checked_out = Booking.where('check_out_date > ? AND id < ?', Date.today, 1000)%>
+    <% beds_booked = Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)%>
+   
+    <% beds_checked_out = Bed.includes(:bookings).where(:bookings => {:check_out_date => 300.years.ago..Date.today}) %>
     
+    <% beds_were_booked = beds_booked - beds_checked_out %>
+    <% beds_not_occupied = Bed.all - beds_were_booked %>
+    <!-- Bed.includes(:bookings).where(bookings: {bed_id: nil, check_out_date: 0}) 
+    Bed.includes(:bookings).where(:bookings => {:check_out_date => Time.now.midnight..Time.now.tomorrow.midnight})
     
-    <%= beds_checked_out %>
+    Bed.includes(:bookings).where(:bookings => {:check_out_date => Time.now..100.year.ago, :bed_id => nil})
+    Bed.includes(:bookings).where(:bookings => {:check_out_date => Time.now..100.year.ago})
     
-    <%= @beds %>
-    <% @beds_not_occupied = Bed.includes(:bookings).where(bookings: {bed_id: nil}) %>
+    Bed.includes(:bookings).where("beds.id IS NOT NULL")
+    Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)
+    
+    Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)
+    
+    bed = Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)
+    bed.includes(:bookings).where(:bookings => {:guest_id => 83232})
+    
+    (Bed.all - Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings))
+    
+    ALl the beds that are booked:
+    Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)
 
-    <%= f.collection_select(:bed_id, @beds_not_occupied, :id, :bed_label, :prompt => "Select a Bed") %>
+		All the beds that are checked out before today
+		Bed.includes(:bookings).where(:bookings => {:check_out_date => 300.years.ago..Date.today})
+
+		
+    -->
+
+    <%= f.collection_select(:bed_id, beds_not_occupied, :id, :bed_label, :prompt => "Select a Bed") %>
   </div>
   
   <div class="field">
@@ -88,16 +113,16 @@
 
 <% end %>
 
-<input type="text" data-behaviour='datepicker' >
-
 
 <script type="text/javascript">
-
-  $.datepicker.setDefaults( settings )
   
   $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker();
-    $('.datepicker').datepicker();
-    $('#myDateField').datepicker("option", "altFormat", "yy-mm-dd");
+  		
+  		$.fn.datepicker.defaults.format = "yyyy-mm-dd <%= 0.days.from_now.strftime("%H:%M:%S") %>";
+  		$.fn.datepicker.defaults.autoclose = true;
+  		$.fn.datepicker.defaults.todayHighlight = true;
+  		$(".datepicker").datepicker()
+  		
   })
+  
 </script>

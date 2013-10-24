@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        format.html { redirect_to beds_url }
         format.json { render action: 'show', status: :created, location: @booking }
       else
         format.html { render action: 'new' }

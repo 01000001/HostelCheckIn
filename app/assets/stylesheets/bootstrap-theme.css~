@@ -11,7 +11,7 @@ th
 
 .show_time
 {
-text-color: white;
+color: white;
 
 }
 

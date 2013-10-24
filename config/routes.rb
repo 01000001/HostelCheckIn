@@ -10,6 +10,7 @@ Bobs::Application.routes.draw do
   resources :users
 
   get "time/set"
+  get "time/set_today"
   get "time/increase"
   get "time/decrease"
 
