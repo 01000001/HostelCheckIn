@@ -4,7 +4,14 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    
+    if params[:search]
+			@bookings = Booking.search(params[:search]).order("created_at DESC")
+			else
+
+			@bookings = Booking.all.order('created_at DESC')
+		end
+		
   end
 
   # GET /bookings/1
@@ -42,7 +49,7 @@ class BookingsController < ApplicationController
   def update
     respond_to do |format|
       if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+        format.html { redirect_to beds_url, notice: 'Booking was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +76,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:check_in_date, :check_out_date, :guest_id, :bed_id, :shift)
+      params.require(:booking).permit(:check_in_date, :check_out_date, :guest_id, :bed_id, :shift, :status)
     end
 end

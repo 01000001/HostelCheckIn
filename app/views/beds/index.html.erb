@@ -69,34 +69,8 @@
   time_variable: @time_variable} %></div>									
 </div>
 
-<!Testing, to be deleted!>
-<% @geza = Guest.first %>
-<% if defined? @geza.guests[0].name == "method"%>
-<%= @geza.beds[0].room %>
-<%= @geza.beds[0].number %>
-<% end %>
-
-<% @bed14 = Bed.first %>
-<% if defined? @bed14.guests[0].name == "method"%>
-<%= @bed14.guests[0].name %>
-<%= @bed14.guests[0].price %>
-<%= @bed14.guests[0].deposit %>
-<!--strftime method to create own date/time display 	- %Y - Year with century,
-%B - The  full  month  name (``January''), %d - Day of the month (01..31),  %A - The  full  weekday  name (``Sunday'')
--->
-<%= @bed14.bookings[0].check_in_date.strftime("%Y %B %d, %A") %>
-<%= Time.now.strftime("%Y %B %d, %A") %>
-
-<% if @bed14.bookings[0].check_in_date.strftime("%Y %B %d, %A") == 
-Time.now.strftime("%Y %B %d, %A") %>
-<%= "Equality!"%>
-<% end %>
-<% end %>
-<!-- 											-->
-
 <br>
 
-<%= link_to 'New Bed', new_bed_path %>
 <script>
 $('#myTab a').click(function (e) {
   e.preventDefault()

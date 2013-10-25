@@ -14,4 +14,14 @@ class ApplicationController < ActionController::Base
 		
 		end
 		
+		def authorize_admin
+		
+		user = User.find_by_id(session[:user_id])
+		
+		unless user.name == "admin"
+				    redirect_to beds_url
+		end
+		
+		end
+		
 end

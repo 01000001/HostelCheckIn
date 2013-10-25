@@ -1,6 +1,7 @@
 class BedsController < ApplicationController
   before_action :set_bed, only: [:show, :edit, :update, :destroy]
-
+	before_filter :authorize_admin, only: [:create, :new]
+  
   # GET /beds
   # GET /beds.json
   def index

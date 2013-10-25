@@ -10,6 +10,13 @@ class GuestsController < ApplicationController
   def index
     @guests = Guest.all
     
+    if params[:search]
+			@guests = Guest.search(params[:search]).order("created_at DESC")
+			else
+
+			@guests = Guest.all.order('created_at DESC')
+		end
+    
   end
 
   # GET /guests/1
@@ -47,7 +54,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
+        format.html { redirect_to beds_url, notice: 'Guest was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

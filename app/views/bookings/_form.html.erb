@@ -15,7 +15,8 @@
 
   <div class="field">
     <%= f.label :check_in_date %><br>
-    <%= f.text_field :check_in_date, :class => 'datepicker', :value => 0.days.from_now, :style => "text-align: Center"  %>
+    <%= f.text_field :check_in_date, :class => 'datepicker', :value => 0.days.from_now.strftime("%Y-%m-%d %H:%M:%S"),
+    :style => "text-align: Center"  %>
     
     
   </div>
@@ -27,10 +28,11 @@
     check_out_date is going to be the date today + the number of days the guest is going to stay-->
     <% if defined? notice.id == "method" %>
     		<% selected_guest = Guest.find_by_id(notice.id) %>
-    		<%= f.text_field :check_out_date, :value => selected_guest.nights.days.from_now,
+    		<%= f.text_field :check_out_date, :value => selected_guest.nights.days.from_now.strftime("%Y-%m-%d %H:%M:%S"),
     		 :class => 'datepicker', :size => 4, :style => "text-align: Center"  %>
     	<% else %>
-    		<%= f.text_field :check_out_date, :value => 1.days.from_now, :class => 'datepicker', :style => "text-align: Center"  %>
+    		<%= f.text_field :check_out_date, :value => 1.days.from_now.strftime("%Y-%m-%d %H:%M:%S"),
+    		:class => 'datepicker', :style => "text-align: Center"  %>
     		
     <% end %>
     <!-- f.date_select :check_out_date, :order => [:day, :month, :year] -->
@@ -43,8 +45,8 @@
     guest field is going to be the just before created guest's name-->
     <% if defined? notice.id == "method" %>
 		  <% selected_guest = Guest.find_by_id(notice.id) %>
-		  <%= selected_guest.name %><br>
-		  <%= f.hidden_field :guest_id, :value => selected_guest.id, :readonly => true %>
+		  <%= f.text_field :guest_id, :value => selected_guest.name, :readonly => true, :style => "text-align: Center"  %>
+		  <%= f.hidden_field :guest_id, :value => selected_guest.id, :readonly => true, :style => "text-align: Center" %>
     <!-- f.collection_select(:guest_id, Guest.all, :id, :name, :selected => Guest.all.map(&:id)) -->
     <% else %>
     		<%= f.collection_select(:guest_id, Guest.all, :id, :name) %>
@@ -105,6 +107,11 @@
   <div class="field">
     <%= f.label :shift %><br>
     <%= f.select(:shift, ["AM","PM","NIGHT"], :prompt => "Select") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status, ["Booking","Check In"], :prompt => "Select") %>
   </div>
   
   <div class="actions">

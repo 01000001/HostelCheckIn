@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
-<%= link_to 'New Guest', new_guest_path %>
+<%= button_to "New Guest", new_guest_path, :method => :get %>
+
+<%= form_tag(guests_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Guests" %><br>
+<%= submit_tag "Search" %>
+<% end %>
 
 <div class="table-responsive">
 <table class="table table-hover">
@@ -11,7 +16,7 @@
       <th>Nights</th>
       <th>Price</th>
       <th>Deposit</th>
-      <th></th>
+      <th>Notes</th>
       <th></th>
       <th></th>
       <th></th>

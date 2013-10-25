@@ -22,7 +22,7 @@
       <div class="nav-collapse">
         <ul class="nav">
         <% if User.find_by_id(session[:user_id]).present? %>
-        		
+        		<% user = User.find_by_id(session[:user_id]) %>
         		<li class="dropdown">
 				    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= User.find_by_id(session[:user_id]).name %> <b class="caret"></b></a>
 				    <ul class="dropdown-menu">
@@ -33,15 +33,20 @@
       	 <% else %>
       	 	<a class="brand" href="#">Bobs</a>
       	 <% end %>
+      	 
           <li><%= link_to 'Beds', beds_url %></li>
           <li><%= link_to 'Guests', guests_url %></li>
           <li><%= link_to 'Bookings', bookings_url %></li>
           <li><%= link_to "Total", total_url %></li>
           
-          <!-- If user is logged in, make him able to log out -->
-        		<% if User.find_by_id(session[:user_id]).present? %>
-        			<li><%= link_to "Log Out", logout_url %></li>
-        		<% end %>
+          <% if User.find_by_id(session[:user_id]).present? %>
+        		<% user = User.find_by_id(session[:user_id]) %>
+        		<% if user.name == "admin" %>
+        		
+          <li><%= link_to "Users", users_url %></li>
+          
+          <% end %>
+          <% end %>
         		  
         	
         </ul>
@@ -81,6 +86,8 @@
 </nav>
 <br>
 <br>
+
+
 <div class="main_division">
 <%= yield %>
 </div>
