@@ -1,6 +1,4 @@
 Bobs::Application.routes.draw do
-
-	get 'admin' => 'admin#index'
 	
 	get 'login' => "sessions#new"
 	post 'login' => "sessions#create"

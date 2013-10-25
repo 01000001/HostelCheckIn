@@ -11,6 +11,7 @@
       <th>Nights</th>
       <th>Price</th>
       <th>Deposit</th>
+      <th>Payment</th>
       <th></th>
       <th></th>
       <th></th>
@@ -44,14 +45,12 @@
 		      <% if session[:time_variable].present? %>
 		      
 		      		<% difference = (session[:time_variable].to_date - bed.bookings[0].check_in_date.to_date).to_i %>
-		      		<% nights_left = bed.guests[0].nights-difference %>
+		      		<%= (bed.bookings[0].check_out_date.to_date - bed.bookings[0].check_in_date.to_date).to_i %>
 		      		
-		      		<%= nights_left %>
 		      		
 		      <% else %>
 		      
 		      		<% difference = (Date.today.to_date - bed.bookings[0].check_in_date.to_date).to_i %>
-		      		<%= bed.guests[0].nights-difference %>
 		      		
 		      <% end %>
 		      </td>
@@ -62,7 +61,7 @@
 				    
 				    <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
 				    <% if bed.bookings[0].status == "Check In"%>
-		      			<td><%= bed.guests[0].locker %></td>
+		      			<td><%= bed.guests[0].price %></td>
 		      		<% else %>
 		      			<td><%= "Booked" %></td>
 		      		<% end %>
@@ -72,11 +71,24 @@
 		      
 		      <% end %>
 		      
-		      <td><%= bed.guests[0].deposit %></td>
+		      		<!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
+				    <% if bed.bookings[0].status == "Check In"%>
+		      			<td><%= bed.guests[0].deposit %></td>
+		      		<% else %>
+		      			<td><%= "Booked" %></td>
+		      		<% end %>
+		      		
+		      		<!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
+				    <% if bed.bookings[0].status == "Check In"%>
+		      			<td><%= bed.guests[0].payment_method %></td>
+		      		<% else %>
+		      			<td><%= "Booked" %></td>
+		      		<% end %>
 		     
 		    <% else %>
 		    
 		      <td>Room is free</td>
+		      <td>-</td>
 		      <td>-</td>
 		      <td>-</td>
 		      <td>-</td>

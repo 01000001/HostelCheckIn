@@ -1,0 +1,81 @@
+<h1>Editing booking</h1>
+
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= @booking.bed.id %>
+  <%= @booking.bed.bed_label %>
+	
+  <div class="field">
+    <%= f.label :check_in_date %><br>
+    <%= f.text_field :check_in_date, :class => 'datepicker', :value => @booking.check_in_date.strftime("%Y-%m-%d %H:%M:%S"),
+    :style => "text-align: Center"   %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :check_out_date %><br>
+    	<%= f.text_field :check_out_date, :class => 'datepicker', :value => @booking.check_out_date.strftime("%Y-%m-%d %H:%M:%S"),
+    	:style => "text-align: Center"   %>
+  </div>
+
+	<div class="field">
+    <%= f.label :guest_id %><br>
+    <%= f.text_field :guest_id, :value => @booking.guest.name, :readonly => true, :style => "text-align: Center"  %>
+		  <%= f.hidden_field :guest_id, :readonly => true, :style => "text-align: Center" %>
+  </div>
+
+	<div class="field">
+    <%= f.label :bed_id %><br>
+    
+    <!--Find all the beds that are not occupied at the moment-->
+    <% beds_booked = Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)%>
+   
+    <% beds_checked_out = Bed.includes(:bookings).where(:bookings => {:check_out_date => 300.years.ago..Date.today}) %>
+    
+    <% beds_were_booked = beds_booked - beds_checked_out %>
+    
+    <!-- Add the corrunt bed to the list of unoccupied beds to be able to select as default in the collection_select-->
+    <% beds_not_occupied = Bed.all - beds_were_booked + Bed.where(id: @booking.bed.id) %>
+
+    <%= f.collection_select(:bed_id, beds_not_occupied, :id, :bed_label, :selected => @booking.bed.id) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :shift %><br>
+    <%= f.select(:shift, ["AM","PM","NIGHT"], :prompt => "Select") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status, ["Booking","Check In"], :prompt => "Select") %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+  		
+  		$.fn.datepicker.defaults.format = "yyyy-mm-dd <%= 0.days.from_now.strftime("%H:%M:%S") %>";
+  		$.fn.datepicker.defaults.autoclose = true;
+  		$.fn.datepicker.defaults.todayHighlight = true;
+  		$(".datepicker").datepicker()
+  		
+  })
+  
+</script>
+

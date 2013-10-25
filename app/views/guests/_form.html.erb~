@@ -18,9 +18,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :nationality %><br>
-    <%= f.text_field :nationality %>
-    <%= f.collection_select(:nationality, @nationality, :id, :name) %>
+    <%= f.label :country %><br>
+    <%= f.select(:nationality, @countries, :prompt => "Select") %>
   </div>
   <div class="field">
     <%= f.label :passport_number %><br>
@@ -34,6 +33,12 @@
     <%= f.label :nights %><br>
     <%= f.number_field :nights %>
   </div>
+  
+  <div class="field">
+    <%= f.label :payment_method %><br>
+    <%= f.select(:payment_method, ["Cash","Credit Card"], :prompt => "Select") %>
+  </div>
+  
   <div class="field">
     <%= f.label :price %><br>
     <%= f.number_field :price %>

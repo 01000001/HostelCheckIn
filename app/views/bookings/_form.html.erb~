@@ -24,19 +24,9 @@
   <div class="field">
     <%= f.label :check_out_date %><br>
     
-    <!--The following if statement checks if the user is redirected from the create_user page, in this case, the default value of the
-    check_out_date is going to be the date today + the number of days the guest is going to stay-->
-    <% if defined? notice.id == "method" %>
-    		<% selected_guest = Guest.find_by_id(notice.id) %>
-    		<%= f.text_field :check_out_date, :value => selected_guest.nights.days.from_now.strftime("%Y-%m-%d %H:%M:%S"),
-    		 :class => 'datepicker', :size => 4, :style => "text-align: Center"  %>
-    	<% else %>
-    		<%= f.text_field :check_out_date, :value => 1.days.from_now.strftime("%Y-%m-%d %H:%M:%S"),
+    	<%= f.text_field :check_out_date, :value => 1.days.from_now.strftime("%Y-%m-%d %H:%M:%S"),
     		:class => 'datepicker', :style => "text-align: Center"  %>
-    		
-    <% end %>
-    <!-- f.date_select :check_out_date, :order => [:day, :month, :year] -->
-    <!-- f.text_field :check_out_date, value: Date.today.strftime('%d-%m-%Y'), class: "datepicker" -->
+    	
   </div>
   <div class="field">
     <%= f.label :guest_id %><br>
@@ -49,7 +39,7 @@
 		  <%= f.hidden_field :guest_id, :value => selected_guest.id, :readonly => true, :style => "text-align: Center" %>
     <!-- f.collection_select(:guest_id, Guest.all, :id, :name, :selected => Guest.all.map(&:id)) -->
     <% else %>
-    		<%= f.collection_select(:guest_id, Guest.all, :id, :name) %>
+    		<%= f.collection_select(:guest_id, Guest.all, :id, :name, :prompt => "Select a Guest") %>
     <% end %>
   </div>
   
@@ -63,20 +53,8 @@
   <div class="field">
     <%= f.label :bed_id %><br>
     
-    <!--Find all the beds that are not occupied at the moment
-    That is all the beds that does not have booking for 
-    -->
     
-    <!Date has to be added here>
-    
-    <!--Find all active bookings-->
-    <% beds_booked = Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)%>
-   
-    <% beds_checked_out = Bed.includes(:bookings).where(:bookings => {:check_out_date => 300.years.ago..Date.today}) %>
-    
-    <% beds_were_booked = beds_booked - beds_checked_out %>
-    <% beds_not_occupied = Bed.all - beds_were_booked %>
-    <!-- Bed.includes(:bookings).where(bookings: {bed_id: nil, check_out_date: 0}) 
+      <!-- Bed.includes(:bookings).where(bookings: {bed_id: nil, check_out_date: 0}) 
     Bed.includes(:bookings).where(:bookings => {:check_out_date => Time.now.midnight..Time.now.tomorrow.midnight})
     
     Bed.includes(:bookings).where(:bookings => {:check_out_date => Time.now..100.year.ago, :bed_id => nil})
@@ -97,9 +75,16 @@
 
 		All the beds that are checked out before today
 		Bed.includes(:bookings).where(:bookings => {:check_out_date => 300.years.ago..Date.today})
-
-		
     -->
+    
+    
+    <!--Find all the beds that are not occupied at the moment-->
+    <% beds_booked = Bed.includes(:bookings).where.not(bookings: {id: nil}).references(:bookings)%>
+   
+    <% beds_checked_out = Bed.includes(:bookings).where(:bookings => {:check_out_date => 300.years.ago..Date.today}) %>
+    
+    <% beds_were_booked = beds_booked - beds_checked_out %>
+    <% beds_not_occupied = Bed.all - beds_were_booked %>
 
     <%= f.collection_select(:bed_id, beds_not_occupied, :id, :bed_label, :prompt => "Select a Bed") %>
   </div>
@@ -107,6 +92,11 @@
   <div class="field">
     <%= f.label :shift %><br>
     <%= f.select(:shift, ["AM","PM","NIGHT"], :prompt => "Select") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status, ["Booking","Check In"], :prompt => "Select") %>
   </div>
   
   <div class="actions">

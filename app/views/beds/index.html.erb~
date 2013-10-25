@@ -6,6 +6,17 @@
 <% @time_variable =  Date.today.strftime("%Y %B %d, %A")%>
 <% end %>
 
+<div style="float: left;">
+<%= button_to "New Guest", new_guest_path, :method => :get, :class =>"btn btn-default btn-lg" %>
+</div>
+
+<div style="float: right;">
+<%= button_to "New Booking", new_booking_path, :method => :get, :class =>"btn btn-default btn-lg" %>
+</div>
+<br>
+<br><br>
+<br>
+
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#room_A">Room A</a></li>
   <li><a href="#room_B">Room B</a></li>
@@ -70,8 +81,6 @@
 </div>
 
 <br>
-
-<%= link_to 'New Bed', new_bed_path %>
 
 <script>
 $('#myTab a').click(function (e) {

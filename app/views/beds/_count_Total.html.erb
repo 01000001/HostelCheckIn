@@ -1,6 +1,7 @@
-
-<% total_price = 0 %>
+<% @total_price = 0 %>
 <% total_deposit = 0 %>
+<% @total_credit_card = 0 %>
+<% @total_cash = 0 %>
 
 <% @beds.each do |bed| %>
 	
@@ -12,19 +13,50 @@
 		
 			<% if defined? bed.guests[0].name == "method" and
 			bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable and
-			bed.bookings[0].shift == shift_variable %>
-		      <% total_price += bed.guests[0].price %>
-		      <% total_deposit += bed.guests[0].deposit %>
-		
+			bed.bookings[0].shift == shift_variable and 
+			%>
+					
+					<!--Check if it's not only a booking but a check in, so the guest payed already the price-->
+					<% if bed.bookings[0].status == "Check In" %>
+				    <% @total_price += bed.guests[0].price %>
+				    <% total_deposit += bed.guests[0].deposit %>
+				  
+				  
+				  <!-- Sum up the credit card payments -->
+				  <% if bed.guests[0].payment_method == "Credit Card" %>
+				  		<% @total_credit_card += bed.guests[0].price%>
+				  <% end %>
+				  
+				  <!-- Sum up the cash payments -->
+				  <% if bed.guests[0].payment_method == "Cash" %>
+				  		<% @total_cash += bed.guests[0].price%>
+				  <% end %>
+					<% end %>
 		  <% end %>
 		
+		<!-- This part is to calculate the day totals-->
 		<% else %>
 			
 				<% if defined? bed.guests[0].name == "method" and
-				bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable %>
-				    <% total_price += bed.guests[0].price %>
+				bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable
+				%>
+					<!--Check if it's not only a booking but a check in, so the guest payed already the price-->
+					<% if bed.bookings[0].status == "Check In" %>
+				    <% @total_price += bed.guests[0].price %>
 				    <% total_deposit += bed.guests[0].deposit %>
-			
+					
+					
+					<!-- Sum up the credit card payments -->
+				  <% if bed.guests[0].payment_method == "Credit Card" %>
+				  		<% @total_credit_card += bed.guests[0].price%>
+				  <% end %>
+				  
+				  <!-- Sum up the cash payments -->
+				  <% if bed.guests[0].payment_method == "Cash" %>
+				  		<% @total_cash += bed.guests[0].price%>
+				  <% end %>
+					<% end %>
+					
 				<% end %>
 		
 		<% end %>
@@ -33,6 +65,11 @@
 
 <% end %>
 
-<td><%= total_price %></td>
+<td><%= @total_cash %></td>
+
+<td><%= @total_credit_card %></td>
+
+<td><%= @total_price %></td>
 
 <td><%= total_deposit %></td>
+

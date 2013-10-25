@@ -26,14 +26,18 @@
     <tr>
     
     		<th>Room</th>
+    		<th>Cash</th>
+    		<th>Credit Card</th>
     		<th>Total</th>
     		<th>Deposit</th>
       
      </tr>
   </thead>
   
-<!--Initialize total_rooms_revenue to zero. -->
+<!--Initialize total revenues to zero. -->
 <% @total_rooms_revenue = 0 %>
+<% @total_credit_card_revenue = 0 %>
+<% @total_cash_revenue = 0 %>
 
 <!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
 to store the total revenue for the rooms individually.-->
@@ -51,7 +55,9 @@ to store the total revenue for the rooms individually.-->
 	shift_variable: "AM"} %>
 	
 	<!--Sum up the particular revenues in @total_rooms_revenue variable without deposits-->
-	<% @total_rooms_revenue += strip_tags(@i).to_i%>
+	<% @total_rooms_revenue += @total_price %>
+	<% @total_credit_card_revenue += @total_credit_card %>
+	<% @total_cash_revenue += @total_cash %>
 	
 	</tr>
 <% end %>
@@ -59,8 +65,11 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
-<legend>Total Revenue of AM Shift: <%= @total_rooms_revenue %> Euro</legend>
-
+<legend>
+Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
+Total Cash Revenue: <%= @total_cash_revenue %><br>
+Total Revenue: <%= @total_rooms_revenue %> Euro
+</legend>
 <!PM Shift>
 
 <h3>PM Shift</h3>
@@ -71,13 +80,16 @@ to store the total revenue for the rooms individually.-->
     
     		<th>Room</th>
     		<th>Total</th>
+    		<th>Credit Card</th>
     		<th>Deposit</th>
       
      </tr>
   </thead>
   
-<!--Initialize total_rooms_revenue to zero. -->
+<!--Initialize total revenues to zero. -->
 <% @total_rooms_revenue = 0 %>
+<% @total_credit_card_revenue = 0 %>
+<% @total_cash_revenue = 0 %>
 
 <!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
 to store the total revenue for the rooms individually.-->
@@ -95,7 +107,9 @@ to store the total revenue for the rooms individually.-->
 	shift_variable: "PM"} %>
 	
 	<!--Sum up the particular revenues in @total_rooms_revenue variable without deposits-->
-	<% @total_rooms_revenue += strip_tags(@i).to_i%>
+	<% @total_rooms_revenue += @total_price %>
+	<% @total_credit_card_revenue += @total_credit_card %>
+	<% @total_cash_revenue += @total_cash %>
 	
 	</tr>
 <% end %>
@@ -103,7 +117,11 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
-<legend>Total Rooms: <%= @total_rooms_revenue %> Euro</legend>
+<legend>
+Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
+Total Cash Revenue: <%= @total_cash_revenue %><br>
+Total Revenue: <%= @total_rooms_revenue %> Euro
+</legend>
 
 <!Night Shift>
 
@@ -115,12 +133,15 @@ to store the total revenue for the rooms individually.-->
     
     		<th>Room</th>
     		<th>Total</th>
+    		<th>Credit Card</th>
     		<th>Deposit</th>
       
      </tr>
   </thead>
-<!--Initialize total_rooms_revenue to zero. -->
+<!--Initialize total revenues to zero. -->
 <% @total_rooms_revenue = 0 %>
+<% @total_credit_card_revenue = 0 %>
+<% @total_cash_revenue = 0 %>
 
 <!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
 to store the total revenue for the rooms individually.-->
@@ -138,7 +159,9 @@ to store the total revenue for the rooms individually.-->
 	shift_variable: "NIGHT"} %>
 	
 	<!--Sum up the particular revenues in @total_rooms_revenue variable without deposits-->
-	<% @total_rooms_revenue += strip_tags(@i).to_i%>
+	<% @total_rooms_revenue += @total_price %>
+	<% @total_credit_card_revenue += @total_credit_card %>
+	<% @total_cash_revenue += @total_cash %>
 	
 	</tr>
 <% end %>
@@ -146,7 +169,11 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
-<legend>Total Rooms: <%= @total_rooms_revenue %> Euro</legend>
+<legend>
+Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
+Total Cash Revenue: <%= @total_cash_revenue %><br>
+Total Revenue: <%= @total_rooms_revenue %> Euro
+</legend>
 
 <!Day Total>
 
@@ -158,12 +185,15 @@ to store the total revenue for the rooms individually.-->
     
     		<th>Room</th>
     		<th>Total</th>
+    		<th>Credit Card</th>
     		<th>Deposit</th>
       
      </tr>
   </thead>
-<!--Initialize total_rooms_revenue to zero. -->
+<!--Initialize total revenues to zero. -->
 <% @total_rooms_revenue = 0 %>
+<% @total_credit_card_revenue = 0 %>
+<% @total_cash_revenue = 0 %>
 
 <!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
 to store the total revenue for the rooms individually.-->
@@ -181,7 +211,9 @@ to store the total revenue for the rooms individually.-->
 	} %>
 	
 	<!--Sum up the particular revenues in @total_rooms_revenue variable without deposits-->
-	<% @total_rooms_revenue += strip_tags(@i).to_i%>
+	<% @total_rooms_revenue += @total_price %>
+	<% @total_credit_card_revenue += @total_credit_card %>
+	<% @total_cash_revenue += @total_cash %>
 	
 	</tr>
 <% end %>
@@ -189,4 +221,10 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
-<legend>Total Rooms: <%= @total_rooms_revenue %> Euro</legend>
+<legend>
+Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
+Total Cash Revenue: <%= @total_cash_revenue %><br>
+Total Revenue: <%= @total_rooms_revenue %> Euro
+</legend>
+
+

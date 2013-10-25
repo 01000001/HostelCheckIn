@@ -1,0 +1,74 @@
+<h1>Statistics</h1>
+
+<%
+	# have guests nationality in an array
+	a= @guests.map {|i| i.nationality }
+
+	# make the hash default to 0 so that += will work correctly
+	b = Hash.new(0)
+
+	# iterate over the array, counting duplicate entries
+	a.each do |v|
+		b[v] += 1
+	end
+
+	g= b.each do |k, v|
+		[k,v]
+	end
+
+	#convert hash to an array
+	@natinonality_count_a = g.to_a
+%>
+
+
+<div id="highChartContainer" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+<br>
+<legend>Guests around the world</legend>
+<div id="chart_div"></div>
+
+<script type='text/javascript'>
+  $(document).ready(function(){
+    chart = new Highcharts.Chart({
+    chart: {
+        renderTo: 'highChartContainer',
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false
+    },
+    title: {
+        text: 'Nationality of Guests'
+    },
+    series: [{
+        type: 'pie',
+        name: 'Nationality share',
+        data: 
+					<%= @natinonality_count_a.to_json.html_safe
+            %>
+    }]
+  });
+});
+</script>
+
+<!-- Add ['Country', 'Popularity'] to the beginning of the array so google maps is able to display the data -->
+<% @google_maps_natinality_a = @natinonality_count_a.unshift(['Country', 'Popularity']).to_json.html_safe%>
+
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    
+    <script type='text/javascript'>
+    
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+      		var data_maintained = <%= @google_maps_natinality_a %>;
+        var data = google.visualization.arrayToDataTable(data_maintained);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    };
+    
+    $(document).ready(function(){drawRegionsMap()});
+    </script>

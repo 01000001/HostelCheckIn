@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 
-<%= button_to "New Guest", new_guest_path, :method => :get %>
-
+<div style="float: middle;">
 <%= form_tag(guests_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Guests" %><br>
-<%= submit_tag "Search" %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Guests", :style => "text-align: Center;",
+:rows => 1, :class => "input" %><br>
+
+<%= submit_tag "Search", :class =>"btn btn-default btn-lg" %>
+</div>
+
 <% end %>
 
 <div class="table-responsive">
@@ -13,10 +16,9 @@
     <tr>
       <th>Name</th>
       <th>Locker</th>
-      <th>Nights</th>
       <th>Price</th>
       <th>Deposit</th>
-      <th>Notes</th>
+      <th>Payment Method</th>
       <th></th>
       <th></th>
       <th></th>
@@ -28,10 +30,9 @@
       <tr>
         <td><%= guest.name %></td>
         <td><%= guest.locker %></td>
-        <td><%= guest.nights %></td>
         <td><%= guest.price %></td>
         <td><%= guest.deposit %></td>
-        <td><%= guest.note %></td>
+        <td><%= guest.payment_method %></td>
         <td><%= link_to 'Show', guest %></td>
         <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
         <td><%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,4 +41,7 @@
   </tbody>
 </table>
 </div>
-<br>
+
+<script type='text/javascript'>
+  console.log('the number of products is ' + '<%= @guests.count %>');
+</script>

@@ -1,5 +1,7 @@
 Bobs::Application.routes.draw do
 	
+	get 'stats' => "admin#index"
+	
 	get 'login' => "sessions#new"
 	post 'login' => "sessions#create"
 	get 'logout' => "sessions#destroy"
