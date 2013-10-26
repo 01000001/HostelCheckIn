@@ -95,25 +95,5 @@
 <%= yield %>
 </div>
 
-
-<script>
-    
-   $(document).ready(function(){
-  		
-  		$.fn.datepicker.defaults.format = "yyyy MM d, DD";
-  		$.fn.datepicker.defaults.autoclose = true;
-  		$.fn.datepicker.defaults.todayHighlight = true;
-  		$(".datepicker").datepicker(
-		{
-				onSelect: function()
-				{ 
-				    var dateObject = $(this).datepicker('getDate');
-				    console.log(55);
-				    console.log(dateObject);
-				}
-		});
-  });
-</script>
-
 </body>
 </html>

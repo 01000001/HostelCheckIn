@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
 			@guests = Guest.search(params[:search]).order("created_at DESC")
 			else
 
-			@guests = Guest.all.order('created_at DESC')
+			@guests = Guest.all
 		end
     
   end
@@ -200,6 +200,6 @@ class GuestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guest_params
-      params.require(:guest).permit(:name, :locker, :nights, :price, :deposit, :nationality, :note, :passport_number, :payment_method)
+      params.require(:guest).permit(:name, :locker, :price, :deposit, :nationality, :note, :passport_number, :payment_method)
     end
 end

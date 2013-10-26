@@ -2,7 +2,7 @@
 
 <div style="float: middle;">
 <%= form_tag(bookings_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Bookings", :style => "text-align: Center" %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Bookings", :style => "text-align: Center" %><br>
 
 <%= submit_tag "Search", :class =>"btn btn-default btn-lg" %>
 </div>
@@ -19,6 +19,7 @@
       <th>Bed</th>
       <th>Status</th>
       <th>Price</th>
+      <th>Nights</th>
       <th></th>
       <th></th>
       <th></th>
@@ -35,6 +36,7 @@
         <td><%= booking.bed.number %></td>
         <td><%= booking.status%></td>
         <td><%= booking.guest.price%></td>
+        <td><%= (bookings.check_out_date.to_date - bookings.check_in_date.to_date).to_i %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>

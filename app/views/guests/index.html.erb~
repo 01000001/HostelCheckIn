@@ -17,6 +17,7 @@
       <th>Name</th>
       <th>Locker</th>
       <th>Price</th>
+      <th>Nights</th>
       <th>Deposit</th>
       <th>Payment Method</th>
       <th></th>
@@ -31,6 +32,11 @@
         <td><%= guest.name %></td>
         <td><%= guest.locker %></td>
         <td><%= guest.price %></td>
+        <% if defined? guest.bookings[0].bed_id == "method"%>
+        <td><%= (guest.bookings[0].check_out_date.to_date - guest.bookings[0].check_in_date.to_date) %></td>
+        <% else %>
+        <td><%= "-" %></td>
+        <% end %>
         <td><%= guest.deposit %></td>
         <td><%= guest.payment_method %></td>
         <td><%= link_to 'Show', guest %></td>
@@ -42,6 +48,3 @@
 </table>
 </div>
 
-<script type='text/javascript'>
-  console.log('the number of products is ' + '<%= @guests.count %>');
-</script>
