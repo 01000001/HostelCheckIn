@@ -1,0 +1,1383 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:47:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BedsController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.2ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = 'f0740126b708ecdb9a15a04b91b38ba0' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBed Load (1.6ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'A'
+  [1m[36mGuest Load (5.7ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3283]]
+  [1m[35mBooking Load (0.4ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3283]]
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3284]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3284]]
+  [1m[36mGuest Load (0.9ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3285]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3285]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3286]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3286]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3287]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3287]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3288]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3288]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3289]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3289]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3290]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3290]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3291]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3291]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3292]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3292]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3293]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3293]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3294]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3294]]
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3295]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3295]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3296]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3296]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3297]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3297]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3298]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3298]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3299]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3299]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3300]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3300]]
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3301]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3301]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3302]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3302]]
+  Rendered beds/_room.html.erb (286.7ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'B'[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3303]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3303]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3304]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3304]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3305]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3305]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3306]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3306]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3307]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3307]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3308]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3308]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3309]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3309]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3310]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3310]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3311]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3311]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3312]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3312]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3313]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3313]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3314]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3314]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3315]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3315]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3316]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3316]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3317]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3317]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3318]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3318]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3319]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3319]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3320]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3320]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3321]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3321]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3322]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3322]]
+  Rendered beds/_room.html.erb (55.1ms)
+  [1m[35mBed Load (0.3ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'C'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3323]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3323]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3324]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3324]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3325]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3325]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3326]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3326]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3327]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3327]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3328]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3328]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3329]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3329]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3330]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3330]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3331]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3331]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3332]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3332]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3333]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3333]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3334]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3334]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3335]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3335]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3336]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3336]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3337]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3337]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3338]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3338]]
+  Rendered beds/_room.html.erb (65.6ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'D'[0m
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3339]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3339]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3340]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3340]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3341]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3341]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3342]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3342]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3343]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3343]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3344]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3344]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3345]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3345]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3346]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3346]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3347]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3347]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3348]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3348]]
+  Rendered beds/_room.html.erb (30.3ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'E'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3349]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3349]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3350]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3350]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3351]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3351]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3352]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3352]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3353]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3353]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3354]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3354]]
+  Rendered beds/_room.html.erb (19.0ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'F'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3355]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3355]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3356]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3356]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3357]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3357]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3358]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3358]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3359]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3359]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3360]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3360]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3361]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3361]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3362]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3362]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3363]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3363]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3364]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3364]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3365]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3365]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3366]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3366]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3367]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3367]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3368]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3368]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3369]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3369]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3370]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3370]]
+  Rendered beds/_room.html.erb (38.1ms)
+  [1m[35mBed Load (0.3ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'G'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3371]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3371]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3372]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3372]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3373]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3373]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3374]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3374]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3375]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3375]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3376]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3376]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3377]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3377]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3378]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3378]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3379]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3379]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3380]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3380]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3381]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3381]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3382]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3382]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3383]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3383]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3384]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3384]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3385]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3385]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3386]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3386]]
+  Rendered beds/_room.html.erb (48.3ms)
+  [1m[36mBed Load (0.4ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'H'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3387]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3387]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3388]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3388]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3389]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3389]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3390]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3390]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3391]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3391]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3392]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3392]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3393]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3393]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3394]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3394]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3395]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3395]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3396]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3396]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3397]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3397]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3398]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3398]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3399]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3399]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3400]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3400]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3401]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3401]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3402]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3402]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3403]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3403]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3404]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3404]]
+  Rendered beds/_room.html.erb (53.3ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'L1'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3405]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3405]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3406]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3406]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3407]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3407]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3408]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3408]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3409]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3409]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3410]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3410]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3411]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3411]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3412]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3412]]
+  Rendered beds/_room.html.erb (21.3ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'L2'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3413]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3413]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3414]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3414]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3415]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3415]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3416]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3416]]
+  Rendered beds/_room.html.erb (11.6ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'M1'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3417]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3417]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3418]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3418]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3419]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3419]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3420]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3420]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3421]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3421]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3422]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3422]]
+  Rendered beds/_room.html.erb (15.5ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'M2'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3423]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3423]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3424]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3424]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3425]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3425]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3426]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3426]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3427]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3427]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3428]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3428]]
+  Rendered beds/_room.html.erb (18.2ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'R1'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3429]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3429]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3430]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3430]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3431]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3431]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3432]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3432]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3433]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3433]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3434]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3434]]
+  Rendered beds/_room.html.erb (15.4ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'R2'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3435]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3435]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3436]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3436]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3437]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3437]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3438]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3438]]
+  Rendered beds/_room.html.erb (12.7ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'Green'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3439]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3439]]
+  Rendered beds/_room.html.erb (3.6ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'Black'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3440]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3440]]
+  Rendered beds/_room.html.erb (3.4ms)
+  Rendered beds/index.html.erb within layouts/application (723.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Completed 200 OK in 1270ms (Views: 1145.9ms | ActiveRecord: 54.9ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/beds.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/time.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/beds.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/highcharts.src.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/time.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap-datepicker/core.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.es.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fr.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:47:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/time/set_today" for 127.0.0.1 at 2013-11-07 10:56:00 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TimeController#set_today as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.5ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = 'f0740126b708ecdb9a15a04b91b38ba0' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Redirected to 
+Completed 500 Internal Server Error in 60ms
+
+ActionController::RedirectBackError (No HTTP_REFERER was set in the request to this action, so redirect_to :back could not be called successfully. If this is a test, make sure to specify request.env["HTTP_REFERER"].):
+  app/controllers/time_controller.rb:15:in `set_today'
+
+
+  Rendered /Users/attilacsala/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/attilacsala/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/attilacsala/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.2ms)
+  Rendered /Users/attilacsala/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:56:04 +0100
+Processing by BedsController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.3ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = 'f0740126b708ecdb9a15a04b91b38ba0' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBed Load (1.4ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'A'
+  [1m[36mGuest Load (5.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3283]]
+  [1m[35mBooking Load (0.3ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3283]]
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3284]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3284]]
+  [1m[36mGuest Load (0.7ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3285]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3285]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3286]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3286]]
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3287]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3287]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3288]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3288]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3289]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3289]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3290]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3290]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3291]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3291]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3292]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3292]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3293]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3293]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3294]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3294]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3295]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3295]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3296]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3296]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3297]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3297]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3298]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3298]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3299]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3299]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3300]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3300]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3301]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3301]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3302]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3302]]
+  Rendered beds/_room.html.erb (240.3ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'B'[0m
+  [1m[35mGuest Load (0.8ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3303]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3303]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3304]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3304]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3305]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3305]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3306]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3306]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3307]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3307]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3308]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3308]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3309]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3309]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3310]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3310]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3311]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3311]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3312]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3312]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3313]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3313]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3314]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3314]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3315]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3315]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3316]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3316]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3317]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3317]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3318]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3318]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3319]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3319]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3320]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3320]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3321]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3321]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3322]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3322]]
+  Rendered beds/_room.html.erb (54.4ms)
+  [1m[35mBed Load (0.3ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'C'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3323]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3323]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3324]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3324]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3325]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3325]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3326]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3326]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3327]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3327]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3328]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3328]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3329]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3329]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3330]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3330]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3331]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3331]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3332]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3332]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3333]]
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3333]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3334]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3334]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3335]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3335]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3336]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3336]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3337]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3337]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3338]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3338]]
+  Rendered beds/_room.html.erb (39.9ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'D'[0m
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3339]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3339]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3340]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3340]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3341]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3341]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3342]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3342]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3343]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3343]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3344]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3344]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3345]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3345]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3346]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3346]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3347]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3347]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3348]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3348]]
+  Rendered beds/_room.html.erb (31.3ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'E'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3349]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3349]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3350]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3350]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3351]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3351]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3352]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3352]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3353]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3353]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3354]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3354]]
+  Rendered beds/_room.html.erb (15.8ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'F'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3355]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3355]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3356]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3356]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3357]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3357]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3358]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3358]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3359]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3359]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3360]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3360]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3361]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3361]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3362]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3362]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3363]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3363]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3364]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3364]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3365]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3365]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3366]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3366]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3367]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3367]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3368]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3368]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3369]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3369]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3370]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3370]]
+  Rendered beds/_room.html.erb (34.4ms)
+  [1m[35mBed Load (0.3ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'G'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3371]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3371]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3372]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3372]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3373]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3373]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3374]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3374]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3375]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3375]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3376]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3376]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3377]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3377]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3378]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3378]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3379]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3379]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3380]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3380]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3381]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3381]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3382]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3382]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3383]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3383]]
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3384]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3384]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3385]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3385]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3386]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3386]]
+  Rendered beds/_room.html.erb (36.6ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'H'[0m
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3387]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3387]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3388]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3388]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3389]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3389]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3390]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3390]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3391]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3391]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3392]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3392]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3393]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3393]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3394]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3394]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3395]]
+  [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3395]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3396]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3396]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3397]]
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3397]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3398]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3398]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3399]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3399]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3400]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3400]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3401]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3401]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3402]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3402]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3403]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3403]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3404]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3404]]
+  Rendered beds/_room.html.erb (46.4ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'L1'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3405]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3405]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3406]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3406]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3407]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3407]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3408]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3408]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3409]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3409]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3410]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3410]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3411]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3411]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3412]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3412]]
+  Rendered beds/_room.html.erb (68.0ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'L2'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3413]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3413]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3414]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3414]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3415]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3415]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3416]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3416]]
+  Rendered beds/_room.html.erb (10.3ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'M1'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3417]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3417]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3418]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3418]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3419]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3419]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3420]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3420]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3421]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3421]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3422]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3422]]
+  Rendered beds/_room.html.erb (14.3ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'M2'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3423]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3423]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3424]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3424]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3425]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3425]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3426]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3426]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3427]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3427]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3428]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3428]]
+  Rendered beds/_room.html.erb (16.7ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'R1'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3429]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3429]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3430]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3430]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3431]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3431]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3432]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3432]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3433]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3433]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3434]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3434]]
+  Rendered beds/_room.html.erb (13.0ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'R2'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3435]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3435]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3436]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3436]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3437]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3437]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3438]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3438]]
+  Rendered beds/_room.html.erb (11.4ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'Green'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3439]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3439]]
+  Rendered beds/_room.html.erb (3.5ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'Black'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3440]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3440]]
+  Rendered beds/_room.html.erb (4.2ms)
+  Rendered beds/index.html.erb within layouts/application (658.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Completed 200 OK in 1017ms (Views: 934.7ms | ActiveRecord: 49.3ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/beds.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/time.css?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:05 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/beds.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/highcharts.src.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/time.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bootstrap-datepicker/core.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fr.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.es.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:56:06 +0100
+
+
+Started GET "/time/set_today" for 127.0.0.1 at 2013-11-07 10:56:07 +0100
+Processing by TimeController#set_today as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.2ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = 'f0740126b708ecdb9a15a04b91b38ba0' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.0ms)[0m  [1mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 1[0m  [["data", "BAh7CUkiEF9jc3JmX3Rva2VuBjoGRUZJIjFmaUUzN296N2RPbUdWZlAxRHhp\nOVBMR0JaZGU4WlZMMFd1MEZEYWdVR2RzPQY7AEZJIhJ0aW1lX3ZhcmlhYmxl\nBjsARlU6CURhdGVbC2kAaQMcfCVpAGkAaQBmDDIyOTkxNjFJIgx1c2VyX2lk\nBjsARmkOSSIcX3R1cmJvbGlua3NfcmVkaXJlY3RfdG8GOwBGIhtodHRwOi8v\nbG9jYWxob3N0OjMwMDAv\n"], ["updated_at", Thu, 07 Nov 2013 09:56:07 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:56:07 +0100
+Processing by BedsController#index as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.2ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = 'f0740126b708ecdb9a15a04b91b38ba0' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'A'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3283]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3283]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3284]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3284]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3285]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3285]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3286]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3286]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3287]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3287]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3288]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3288]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3289]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3289]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3290]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3290]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3291]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3291]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3292]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3292]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3293]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3293]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3294]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3294]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3295]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3295]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3296]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3296]]
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3297]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3297]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3298]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3298]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3299]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3299]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3300]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3300]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3301]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3301]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3302]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3302]]
+  Rendered beds/_room.html.erb (54.3ms)
+  [1m[35mBed Load (0.3ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'B'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3303]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3303]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3304]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3304]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3305]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3305]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3306]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3306]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3307]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3307]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3308]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3308]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3309]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3309]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3310]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3310]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3311]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3311]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3312]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3312]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3313]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3313]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3314]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3314]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3315]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3315]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3316]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3316]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3317]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3317]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3318]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3318]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3319]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3319]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3320]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3320]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3321]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3321]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3322]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3322]]
+  Rendered beds/_room.html.erb (42.2ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'C'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3323]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3323]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3324]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3324]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3325]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3325]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3326]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3326]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3327]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3327]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3328]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3328]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3329]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3329]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3330]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3330]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3331]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3331]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3332]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3332]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3333]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3333]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3334]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3334]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3335]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3335]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3336]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3336]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3337]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3337]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3338]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3338]]
+  Rendered beds/_room.html.erb (62.4ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'D'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3339]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3339]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3340]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3340]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3341]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3341]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3342]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3342]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3343]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3343]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3344]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3344]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3345]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3345]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3346]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3346]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3347]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3347]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3348]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3348]]
+  Rendered beds/_room.html.erb (21.4ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'E'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3349]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3349]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3350]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3350]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3351]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3351]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3352]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3352]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3353]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3353]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3354]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3354]]
+  Rendered beds/_room.html.erb (15.0ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'F'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3355]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3355]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3356]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3356]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3357]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3357]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3358]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3358]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3359]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3359]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3360]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3360]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3361]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3361]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3362]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3362]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3363]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3363]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3364]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3364]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3365]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3365]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3366]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3366]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3367]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3367]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3368]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3368]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3369]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3369]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3370]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3370]]
+  Rendered beds/_room.html.erb (31.6ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'G'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3371]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3371]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3372]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3372]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3373]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3373]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3374]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3374]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3375]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3375]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3376]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3376]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3377]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3377]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3378]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3378]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3379]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3379]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3380]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3380]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3381]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3381]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3382]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3382]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3383]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3383]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3384]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3384]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3385]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3385]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3386]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3386]]
+  Rendered beds/_room.html.erb (31.8ms)
+  [1m[35mBed Load (0.3ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'H'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3387]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3387]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3388]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3388]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3389]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3389]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3390]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3390]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3391]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3391]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3392]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3392]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3393]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3393]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3394]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3394]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3395]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3395]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3396]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3396]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3397]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3397]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3398]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3398]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3399]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3399]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3400]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3400]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3401]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3401]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3402]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3402]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3403]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3403]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3404]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3404]]
+  Rendered beds/_room.html.erb (38.4ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'L1'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3405]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3405]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3406]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3406]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3407]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3407]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3408]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3408]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3409]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3409]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3410]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3410]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3411]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3411]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3412]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3412]]
+  Rendered beds/_room.html.erb (17.4ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'L2'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3413]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3413]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3414]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3414]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3415]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3415]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3416]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3416]]
+  Rendered beds/_room.html.erb (9.8ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'M1'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3417]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3417]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3418]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3418]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3419]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3419]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3420]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3420]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3421]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3421]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3422]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3422]]
+  Rendered beds/_room.html.erb (13.2ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'M2'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3423]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3423]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3424]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3424]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3425]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3425]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3426]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3426]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3427]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3427]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3428]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3428]]
+  Rendered beds/_room.html.erb (14.9ms)
+  [1m[36mBed Load (0.2ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'R1'[0m
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3429]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3429]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3430]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3430]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3431]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3431]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3432]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3432]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3433]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3433]]
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3434]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3434]]
+  Rendered beds/_room.html.erb (11.9ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'R2'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3435]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3435]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3436]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3436]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3437]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3437]]
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3438]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3438]]
+  Rendered beds/_room.html.erb (9.8ms)
+  [1m[36mBed Load (0.3ms)[0m  [1mSELECT "beds".* FROM "beds" WHERE "beds"."room" = 'Green'[0m
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?  [["bed_id", 3439]]
+  [1m[36mBooking Load (0.1ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3439]]
+  Rendered beds/_room.html.erb (5.0ms)
+  [1m[35mBed Load (0.2ms)[0m  SELECT "beds".* FROM "beds" WHERE "beds"."room" = 'Black'
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "bookings" ON "guests"."id" = "bookings"."guest_id" WHERE "bookings"."bed_id" = ?[0m  [["bed_id", 3440]]
+  [1m[35mBooking Load (0.1ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bed_id" = ?  [["bed_id", 3440]]
+  Rendered beds/_room.html.erb (3.5ms)
+  Rendered beds/index.html.erb within layouts/application (398.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Completed 200 OK in 466ms (Views: 431.0ms | ActiveRecord: 32.7ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 1  [["data", "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFmaUUzN296N2RPbUdWZlAxRHhp\nOVBMR0JaZGU4WlZMMFd1MEZEYWdVR2RzPQY7AEZJIhJ0aW1lX3ZhcmlhYmxl\nBjsARlU6CURhdGVbC2kAaQMcfCVpAGkAaQBmDDIyOTkxNjFJIgx1c2VyX2lk\nBjsARmkO\n"], ["updated_at", Thu, 07 Nov 2013 09:56:08 UTC +00:00]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
