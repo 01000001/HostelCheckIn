@@ -280,10 +280,10 @@ Guest.delete_all
 	
 	#... Create Bookings ... ... ... ... 
 	$i = 1
-	$bookings_ammount = 20
+	$bookings_ammount = 100
 	while $i <= $bookings_ammount do
-		Booking.create(:check_in_date => rand(0.days).ago,
-		:check_out_date => rand(2.days).from_now,
+		Booking.create(:check_in_date => rand(1.days).ago,
+		:check_out_date => rand(5.days).from_now,
 		:guest_id => Guest.pluck(:id).sample,
 		:bed_id => Bed.pluck(:id).sample,
 		:shift => ["AM","PM", "NIGHT"].sample,
