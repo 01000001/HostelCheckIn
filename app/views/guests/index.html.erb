@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!-- Searching is not working in this form on PostgreSQL
+
 <div style="float: middle;">
 <%= form_tag(guests_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Guests", :style => "text-align: Center;",
@@ -7,8 +9,9 @@
 
 <%= submit_tag "Search", :class =>"btn btn-default btn-lg" %>
 </div>
-
 <% end %>
+-->
+
 
 <div class="table-responsive">
 <table class="table table-hover">

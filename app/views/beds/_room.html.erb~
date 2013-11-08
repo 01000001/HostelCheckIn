@@ -28,9 +28,7 @@
         Check guests' booking and check out date, display only those guests that are staying in the hotel during
         the given date.-->
         
-        <% if defined? bed.guests[0].name == "method" and
-        bed.bookings[0].check_in_date.strftime("%Y%m%d") <= time_variable.to_time.strftime("%Y%m%d") and
-        bed.bookings[0].check_out_date.strftime("%Y%m%d") > time_variable.to_time.strftime("%Y%m%d") %>
+        <% if defined? bed.guests[0].name == "method"%>
          
 		      <td><%= link_to bed.guests[0].name, edit_guest_path(bed.guests[0]) %></td>
 		      
@@ -86,16 +84,17 @@
 		      			<td><%= "Booked" %></td>
 		      		<% end %>
 		     
-		     <td><%= link_to 'Edit Guest', edit_guest_path(bed.guests[0]) %></td>
-        <td><%= link_to 'Edit Booking', edit_booking_path(bed.bookings[0]) %></td>
+		     <!--
 		     
-		      <!--
-        
-        and
+		     and
         bed.bookings[0].check_in_date.strftime("%Y%m%d") <= time_variable.to_time.strftime("%Y%m%d") and
         bed.bookings[0].check_out_date.strftime("%Y%m%d") > time_variable.to_time.strftime("%Y%m%d")
-        
-        -->
+		     
+		     -->
+		     
+		     
+		     <td><%= link_to 'Edit Guest', edit_guest_path(bed.guests[0]) %></td>
+        <td><%= link_to 'Edit Booking', edit_booking_path(bed.bookings[0]) %></td>
 		     
 		     
 		    <% else %>
@@ -106,7 +105,8 @@
 		      <td>-</td>
 		      <td>-</td>
 		      <td>-</td>
-        
+        		<td>-</td>
+		      <td>-</td>
         <% end %>
         
         <!-- Don't destroy beds!

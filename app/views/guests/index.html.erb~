@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!-- Searching is not working in this form on PostgreSQL
+
 <div style="float: middle;">
 <%= form_tag(guests_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Guests", :style => "text-align: Center;",
@@ -7,6 +9,8 @@
 
 <%= submit_tag "Search", :class =>"btn btn-default btn-lg" %>
 </div>
+
+-->
 
 <% end %>
 
@@ -33,7 +37,7 @@
         <td><%= guest.locker %></td>
         <td><%= guest.price %></td>
         <% if defined? guest.bookings[0].bed_id == "method"%>
-        <td><%= (guest.bookings[0].check_out_date.to_date - guest.bookings[0].check_in_date.to_date) %></td>
+        <td><%= (guest.bookings[0].check_out_date.to_date - guest.bookings[0].check_in_date.to_date).to_i %></td>
         <% else %>
         <td><%= "-" %></td>
         <% end %>

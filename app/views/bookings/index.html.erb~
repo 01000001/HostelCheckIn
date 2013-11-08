@@ -36,7 +36,7 @@
         <td><%= booking.bed.number %></td>
         <td><%= booking.status%></td>
         <td><%= booking.guest.price%></td>
-        <td><%= (bookings.check_out_date.to_date - bookings.check_in_date.to_date).to_i %></td>
+        <td><%= (booking.check_out_date.to_date - booking.check_in_date.to_date).to_i %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
