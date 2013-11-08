@@ -217,7 +217,7 @@ Booking.delete_all
 		$i +=1
 	end
 
-=begin
+
 #... Create Guests ... ... ... ...
 
 require 'random_data'
@@ -264,7 +264,7 @@ Guest.delete_all
         "Yemen", "Zambia", "Zimbabwe"]
 
 	$i = 1
-	$gests_ammount = 200
+	$gests_ammount = 50
 	while $i <= $gests_ammount do
 		name = Random.firstname + " " + Random.lastname
 		Guest.create(:name => name,
@@ -293,4 +293,3 @@ Guest.delete_all
 		$i +=1
 	end
 	
-=end

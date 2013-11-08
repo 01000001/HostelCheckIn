@@ -28,89 +28,86 @@
         Check guests' booking and check out date, display only those guests that are staying in the hotel during
         the given date.-->
         
-        <% if defined? bed.guests[0].name == "method"and
+        <% if defined? bed.guests[0].name == "method" and
         bed.bookings[0].check_in_date.strftime("%Y%m%d") <= time_variable.to_time.strftime("%Y%m%d") and
-        bed.bookings[0].check_out_date.strftime("%Y%m%d") > time_variable.to_time.strftime("%Y%m%d")%>
+        bed.bookings[0].check_out_date.strftime("%Y%m%d") > time_variable.to_time.strftime("%Y%m%d") %>
          
-		      <td><%= link_to bed.guests[0].name, edit_guest_path(bed.guests[0]) %></td>
-		      
-		      <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
-		      <% if bed.bookings[0].status == "Check In"%>
-		      		<td><%= bed.guests[0].locker %></td>
-		      <% else %>
-		      		<td><%= "Booked" %></td>
-		      	<% end %>
-		      	
-		      <td>
-		      <% if session[:time_variable].present? %>
-		      
-		      		<% difference = (session[:time_variable].to_date - bed.bookings[0].check_in_date.to_date).to_i %>
-		      		<%= nights_left = (bed.bookings[0].check_out_date.to_date - bed.bookings[0].check_in_date.to_date).to_i - difference %>
-		      		
-		      		
-		      <% else %>
-		      
-		      		<% difference = (Date.today.to_date - bed.bookings[0].check_in_date.to_date).to_i %>
-		      		<%= (bed.bookings[0].check_out_date.to_date - bed.bookings[0].check_in_date.to_date).to_i - difference %>
-		      		
-		      <% end %>
-		      </td>
-		      
-		      <!--Check if guests are checked in in the given date, if yes, display the price they pay, if not,
-		      leave the column empty.-->
-		      <% if bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable %>
-				    
-				    <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
-				    <% if bed.bookings[0].status == "Check In"%>
-		      			<td><%= bed.guests[0].price %></td>
-		      		<% else %>
-		      			<td><%= "Booked" %></td>
-		      		<% end %>
-				    
-				  <% else %>
-				    <td>-</td>
-		      
-		      <% end %>
-		      
-		      		<!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
-				    <% if bed.bookings[0].status == "Check In"%>
-		      			<td><%= bed.guests[0].deposit %></td>
-		      		<% else %>
-		      			<td><%= "Booked" %></td>
-		      		<% end %>
-		      		
-		      		<!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
-				    <% if bed.bookings[0].status == "Check In"%>
-		      			<td><%= bed.guests[0].payment_method %></td>
-		      		<% else %>
-		      			<td><%= "Booked" %></td>
-		      		<% end %>
-		     
-		     <!--
-		     
-		     and
-        bed.bookings[0].check_in_date.strftime("%Y%m%d") <= time_variable.to_time.strftime("%Y%m%d") and
-        bed.bookings[0].check_out_date.strftime("%Y%m%d") > time_variable.to_time.strftime("%Y%m%d")
-		     
-		     -->
-		     
-		     
-		     <td><%= link_to 'Edit Guest', edit_guest_path(bed.guests[0]) %></td>
+                      <td><%= link_to bed.guests[0].name, edit_guest_path(bed.guests[0]) %></td>
+                      
+                      <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
+                      <% if bed.bookings[0].status == "Check In"%>
+                                      <td><%= bed.guests[0].locker %></td>
+                      <% else %>
+                                      <td><%= "Booked" %></td>
+                              <% end %>
+                              
+                      <td>
+                      <% if session[:time_variable].present? %>
+                      
+                                      <% difference = (session[:time_variable].to_date - bed.bookings[0].check_in_date.to_date).to_i %>
+                                      <%= nights_left = (bed.bookings[0].check_out_date.to_date -
+                                      bed.bookings[0].check_in_date.to_date).to_i - difference %>
+                                      
+                                      
+                      <% else %>
+                      
+                                      <% difference = (Date.today.to_date - bed.bookings[0].check_in_date.to_date).to_i %>
+                                      <%= (bed.bookings[0].check_out_date.to_date - bed.bookings[0].check_in_date.to_date).to_i - difference %>
+                                      
+                      <% end %>
+                      </td>
+                      
+                      <!--Check if guests are checked in in the given date, if yes, display the price they pay, if not,
+                      leave the column empty.-->
+                      <% if bed.bookings[0].check_in_date.strftime("%Y %B %d, %A") == time_variable %>
+                                    
+                                    <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
+                                    <% if bed.bookings[0].status == "Check In"%>
+                                              <td><%= bed.guests[0].price %></td>
+                                      <% else %>
+                                              <td><%= "Booked" %></td>
+                                      <% end %>
+                                    
+                                  <% else %>
+                                    <td>-</td>
+                      
+                      <% end %>
+                      
+                                      <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
+                                    <% if bed.bookings[0].status == "Check In"%>
+                                              <td><%= bed.guests[0].deposit %></td>
+                                      <% else %>
+                                              <td><%= "Booked" %></td>
+                                      <% end %>
+                                      
+                                      <!--Check if guest is checked in yet or is it only a booking and guest still has to check in-->
+                                    <% if bed.bookings[0].status == "Check In"%>
+                                              <td><%= bed.guests[0].payment_method %></td>
+                                      <% else %>
+                                              <td><%= "Booked" %></td>
+                                      <% end %>
+                                      
+                                      <td><%= link_to 'Edit Guest', edit_guest_path(bed.guests[0]) %></td>
         <td><%= link_to 'Edit Booking', edit_booking_path(bed.bookings[0]) %></td>
-		     
-		     
-		    <% else %>
-		    
-		      <td>Room is free</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-        		<td>-</td>
-		      <td>-</td>
-        <% end %>
+                     
+                    <% else %>
+                    
+                      <td>Room is free</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                       <td><%= link_to '-'%></td>
+                       <td><%= link_to '-'%></td>
+                      
+                     
         
+        <% end %>
+  				
+        <td><%= link_to '', edit_guest_path(bed.guests[0]) %></td>
+        <td></td>
+
         <!-- Don't destroy beds!
         <td><%= link_to 'Destroy', bed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         -->

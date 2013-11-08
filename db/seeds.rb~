@@ -217,6 +217,7 @@ Booking.delete_all
 		$i +=1
 	end
 
+
 #... Create Guests ... ... ... ...
 
 require 'random_data'
@@ -291,3 +292,4 @@ Guest.delete_all
 		)
 		$i +=1
 	end
+	
