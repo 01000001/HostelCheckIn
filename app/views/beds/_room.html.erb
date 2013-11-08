@@ -86,6 +86,10 @@
 		      			<td><%= "Booked" %></td>
 		      		<% end %>
 		     
+		     <td><%= link_to 'Edit Guest', edit_guest_path(bed.guests[0]) %></td>
+        <td><%= link_to 'Edit Booking', edit_booking_path(bed.bookings[0]) %></td>
+		     
+		     
 		    <% else %>
 		    
 		      <td>Room is free</td>
@@ -94,11 +98,10 @@
 		      <td>-</td>
 		      <td>-</td>
 		      <td>-</td>
-        
+        		<td>-</td>
+		      <td>-</td>
         <% end %>
-  
-        <td><%= link_to 'Edit Guest', edit_guest_path(bed.guests[0]) %></td>
-        <td><%= link_to 'Edit Booking', edit_booking_path(bed.bookings[0]) %></td>
+        
         <!-- Don't destroy beds!
         <td><%= link_to 'Destroy', bed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         -->

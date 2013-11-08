@@ -21,6 +21,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+      
+      <!--Decrease the chance of accidently deleting admin bu not showing it in the list'-->
       <% if user.name == "admin" %>
       <% else %>
         <td><%= user.name %></td>

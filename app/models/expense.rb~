@@ -1,0 +1,5 @@
+class Expense < ActiveRecord::Base
+
+validates :name, :value, :status, :shift, presence: true
+
+end

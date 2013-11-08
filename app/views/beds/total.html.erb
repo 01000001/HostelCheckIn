@@ -19,58 +19,84 @@
 
 <!AM Shift>
 
-<h3>AM Shift</h3>
-<div class="table-responsive">
-<table class="table table-hover">
-  <thead>
-    <tr>
-    
-    		<th>Room</th>
-    		<th>Cash</th>
-    		<th>Credit Card</th>
-    		<th>Total</th>
-    		<th>Deposit</th>
-      
-     </tr>
-  </thead>
-  
-<!--Initialize total revenues to zero. -->
-<% @total_rooms_revenue = 0 %>
-<% @total_credit_card_revenue = 0 %>
-<% @total_cash_revenue = 0 %>
+	<h3>AM Shift</h3>
+	<div class="table-responsive">
+	<table class="table table-hover">
+		<thead>
+		  <tr>
+		  
+		  		<th>Room</th>
+		  		<th>Cash</th>
+		  		<th>Credit Card</th>
+		  		<th>Total</th>
+		  		<th>Deposit</th>
+		    
+		   </tr>
+		</thead>
+		
+	<!--Initialize total revenues to zero. -->
+	<% @total_rooms_revenue = 0 %>
+	<% @total_credit_card_revenue = 0 %>
+	<% @total_cash_revenue = 0 %>
+	<% @total_expense = 0 %>
 
-<!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
-to store the total revenue for the rooms individually.-->
-<% room_names.each do |name| %>
+	<!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
+	to store the total revenue for the rooms individually.-->
+	<% room_names.each do |name| %>
 	
-	<tbody>
-	<tr>
-	<% @i = "room_total_" + name %>
+		<tbody>
+		<tr>
+		<% @i = "room_total_" + name %>
 	
-	<!--Render the _count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
-	Bed table and sum upp all the revenue in the particular rooms.-->
-	<td><%= name %> Room</td>
+		<!--Render the _count_Total page sending the rooms' name as room_variable_total, the rendered page will iterate through the
+		Bed table and sum upp all the revenue in the particular rooms.-->
+		<td><%= name %> Room</td>
 	
-	<%= @i = render partial: "count_Total", locals: {room_variable_total: name, time_variable: @time_variable,
-	shift_variable: "AM"} %>
+		<%= @i = render partial: "count_Total", locals: {room_variable_total: name, time_variable: @time_variable,
+		shift_variable: "AM"} %>
 	
-	<!--Sum up the particular revenues in @total_rooms_revenue variable without deposits-->
-	<% @total_rooms_revenue += @total_price %>
-	<% @total_credit_card_revenue += @total_credit_card %>
-	<% @total_cash_revenue += @total_cash %>
+		<!--Sum up the particular revenues in @total_rooms_revenue variable without deposits-->
+		<% @total_rooms_revenue += @total_price %>
+		<% @total_credit_card_revenue += @total_credit_card %>
+		<% @total_cash_revenue += @total_cash %>
 	
-	</tr>
-<% end %>
-	</tbody>
-</table>
-</div>
+		</tr>
+	<% end %>
+		</tbody>
+	</table>
+	</div>
 
-<legend>
-Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
-Total Cash Revenue: <%= @total_cash_revenue %><br>
-Total Revenue: <%= @total_rooms_revenue %> Euro
-</legend>
-<!PM Shift>
+	<legend>
+
+	<!--Count expenses-->
+	<% Expense.all.each do |expense| %>
+
+	<% if session[:time_variable].present? %>
+		<% if expense.date.strftime("%Y%m%d") == session[:time_variable].strftime("%Y%m%d") and
+		expense.shift == "AM" %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% else %>
+
+		<% if expense.date.strftime("%Y%m%d") == Date.today.strftime("%Y%m%d") and
+		expense.shift == "AM" %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% end %>
+	<% end %>
+
+
+	Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
+	Total Cash Revenue: <%= @total_cash_revenue %><br>
+	Total Expense: <%= @total_expense %><br>
+	Total Revenue: <%= @total_rooms_revenue - @total_expense %> Euro
+	</legend>
+
+<!PM Shift> 
 
 <h3>PM Shift</h3>
 <div class="table-responsive">
@@ -90,6 +116,7 @@ Total Revenue: <%= @total_rooms_revenue %> Euro
 <% @total_rooms_revenue = 0 %>
 <% @total_credit_card_revenue = 0 %>
 <% @total_cash_revenue = 0 %>
+<% @total_expense = 0 %>
 
 <!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
 to store the total revenue for the rooms individually.-->
@@ -117,10 +144,32 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
+<!--Count expenses-->
+	<% Expense.all.each do |expense| %>
+
+	<% if session[:time_variable].present? %>
+		<% if expense.date.strftime("%Y%m%d") == session[:time_variable].strftime("%Y%m%d") and
+		expense.shift == "PM" %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% else %>
+
+		<% if expense.date.strftime("%Y%m%d") == Date.today.strftime("%Y%m%d") and
+		expense.shift == "PM" %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% end %>
+	<% end %>
+
 <legend>
 Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
 Total Cash Revenue: <%= @total_cash_revenue %><br>
-Total Revenue: <%= @total_rooms_revenue %> Euro
+	Total Expense: <%= @total_expense %><br>
+	Total Revenue: <%= @total_rooms_revenue - @total_expense %> Euro
 </legend>
 
 <!Night Shift>
@@ -142,6 +191,7 @@ Total Revenue: <%= @total_rooms_revenue %> Euro
 <% @total_rooms_revenue = 0 %>
 <% @total_credit_card_revenue = 0 %>
 <% @total_cash_revenue = 0 %>
+<% @total_expense = 0 %>
 
 <!--Iterate through the room names, create variables room_total_ + room name (for example room_total_A, room_total_B etc)
 to store the total revenue for the rooms individually.-->
@@ -169,10 +219,32 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
+<!--Count expenses-->
+	<% Expense.all.each do |expense| %>
+
+	<% if session[:time_variable].present? %>
+		<% if expense.date.strftime("%Y%m%d") == session[:time_variable].strftime("%Y%m%d") and
+		expense.shift == "NIGHT" %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% else %>
+
+		<% if expense.date.strftime("%Y%m%d") == Date.today.strftime("%Y%m%d") and
+		expense.shift == "NIGHT" %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% end %>
+	<% end %>
+
 <legend>
 Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
 Total Cash Revenue: <%= @total_cash_revenue %><br>
-Total Revenue: <%= @total_rooms_revenue %> Euro
+	Total Expense: <%= @total_expense %><br> 
+	Total Revenue: <%= @total_rooms_revenue - @total_expense %> Euro
 </legend>
 
 <!Day Total>
@@ -221,10 +293,30 @@ to store the total revenue for the rooms individually.-->
 </table>
 </div>
 
+<!--Count expenses-->
+	<% Expense.all.each do |expense| %>
+
+	<% if session[:time_variable].present? %>
+		<% if expense.date.strftime("%Y%m%d") == session[:time_variable].strftime("%Y%m%d")%>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% else %>
+
+		<% if expense.date.strftime("%Y%m%d") == Date.today.strftime("%Y%m%d") %>
+		<% @total_expense += expense.value %>
+
+		<% end %>
+	
+	<% end %>
+	<% end %>
+
 <legend>
 Total Credit Card Payments: <%= @total_credit_card_revenue %> Euro<br>
 Total Cash Revenue: <%= @total_cash_revenue %><br>
-Total Revenue: <%= @total_rooms_revenue %> Euro
+	Total Expense: <%= @total_expense %><br>
+	Total Revenue: <%= @total_rooms_revenue - @total_expense %> Euro
 </legend>
 
 

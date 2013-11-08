@@ -1,5 +1,7 @@
 Bobs::Application.routes.draw do
 	
+  resources :expenses
+
 	get 'stats' => "admin#index"
 	
 	get 'login' => "sessions#new"
